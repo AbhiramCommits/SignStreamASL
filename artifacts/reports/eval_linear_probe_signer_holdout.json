@@ -1,0 +1,838 @@
+{
+  "checkpoint": "artifacts/checkpoints/linear_probe_signer_holdout.pt",
+  "class_names": [
+    "HELLO",
+    "THANK-YOU",
+    "HELP",
+    "WATER",
+    "NAME",
+    "LEARN",
+    "YES",
+    "NO",
+    "PLEASE",
+    "SORRY",
+    "MORE",
+    "FINISH",
+    "EAT",
+    "DRINK",
+    "GO",
+    "COME",
+    "WANT",
+    "NEED",
+    "FRIEND",
+    "FAMILY",
+    "MOTHER",
+    "FATHER",
+    "BROTHER",
+    "SISTER",
+    "HOME",
+    "SCHOOL",
+    "WORK",
+    "PLAY",
+    "READ",
+    "WRITE",
+    "TALK",
+    "SEE",
+    "LOOK",
+    "WAIT",
+    "STOP",
+    "AGAIN",
+    "UNDERSTAND",
+    "KNOW",
+    "THINK",
+    "FEEL",
+    "HAPPY",
+    "SAD",
+    "ANGRY",
+    "LOVE",
+    "LIKE",
+    "GOOD",
+    "BAD",
+    "BIG",
+    "SMALL",
+    "HOT",
+    "COLD",
+    "DAY",
+    "NIGHT",
+    "TIME",
+    "NOW",
+    "LATER",
+    "MORNING",
+    "EVENING",
+    "WHERE",
+    "WHO"
+  ],
+  "config": {
+    "batch_size": 256,
+    "confidence_threshold": 0.6,
+    "cooldown_s": 0.35,
+    "ema_windows": 3,
+    "fps": 30,
+    "gold_path": "eval/gold_set.json",
+    "gold_size": 300,
+    "min_duration_s": 0.35,
+    "n_bins": 10,
+    "parquet_index": false,
+    "reports_dir": "artifacts/reports",
+    "seed": 99,
+    "stride": 8,
+    "threshold_sweep": [
+      0.3,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ],
+    "top_k": 5,
+    "window": 48
+  },
+  "confusion_matrix_csv": "artifacts/reports/confusion_linear_probe_signer_holdout.csv",
+  "fairness": {
+    "abstain_threshold": 0.6,
+    "best_signer": "S14",
+    "fairness_gap": 0.6126682736235718,
+    "handedness": {
+      "left-dominant": {
+        "n": 318,
+        "signers": [
+          "S13"
+        ],
+        "top1": 0.6855345911949685
+      },
+      "right-dominant": {
+        "n": 678,
+        "signers": [
+          "S12",
+          "S14"
+        ],
+        "top1": 0.4218289085545723
+      }
+    },
+    "handedness_gap": 0.26370568264039623,
+    "high_low_top1_gap": 0.5910948937789617,
+    "mean_abstain_rate": 0.2604529686169084,
+    "per_signer": [
+      {
+        "abstain_rate": 0.16422287390029325,
+        "handedness": "right-dominant",
+        "mean_confidence": 0.8334434628486633,
+        "n": 341,
+        "quality_tier": "LOW",
+        "signer": "S12",
+        "top1": 0.11730205278592376,
+        "top5": 0.45161290322580644
+      },
+      {
+        "abstain_rate": 0.31446540880503143,
+        "handedness": "left-dominant",
+        "mean_confidence": 0.7293196320533752,
+        "n": 318,
+        "quality_tier": "HIGH",
+        "signer": "S13",
+        "top1": 0.6855345911949685,
+        "top5": 0.9213836477987422
+      },
+      {
+        "abstain_rate": 0.3026706231454006,
+        "handedness": "right-dominant",
+        "mean_confidence": 0.7460974454879761,
+        "n": 337,
+        "quality_tier": "HIGH",
+        "signer": "S14",
+        "top1": 0.7299703264094956,
+        "top5": 0.9703264094955489
+      }
+    ],
+    "quality_tiers": {
+      "HIGH": {
+        "max_signer_top1": 0.7299703264094956,
+        "min_signer_top1": 0.6855345911949685,
+        "n": 655,
+        "signers": [
+          "S13",
+          "S14"
+        ],
+        "top1": 0.7083969465648855
+      },
+      "LOW": {
+        "max_signer_top1": 0.11730205278592376,
+        "min_signer_top1": 0.11730205278592376,
+        "n": 341,
+        "signers": [
+          "S12"
+        ],
+        "top1": 0.11730205278592376
+      }
+    },
+    "worst_signer": "S12"
+  },
+  "gold_content_hash": null,
+  "manifest_hash": "af1b378a9531b50d5e83ef489532ad684ee896a83248afa99c86c9941d15224b",
+  "metrics": {
+    "ece": 0.26678115265615976,
+    "macro_f1": 0.5356301620618752,
+    "micro_f1": 0.5060240963855421,
+    "n": 996,
+    "per_class": [
+      {
+        "class_id": 0,
+        "f1": 0.7333333333333333,
+        "gloss": "HELLO",
+        "precision": 0.8461538461538461,
+        "recall": 0.6470588235294118,
+        "support": 17
+      },
+      {
+        "class_id": 1,
+        "f1": 0.7692307692307693,
+        "gloss": "THANK-YOU",
+        "precision": 1.0,
+        "recall": 0.625,
+        "support": 16
+      },
+      {
+        "class_id": 2,
+        "f1": 0.5,
+        "gloss": "HELP",
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "support": 18
+      },
+      {
+        "class_id": 3,
+        "f1": 0.5217391304347826,
+        "gloss": "WATER",
+        "precision": 1.0,
+        "recall": 0.35294117647058826,
+        "support": 17
+      },
+      {
+        "class_id": 4,
+        "f1": 0.45454545454545453,
+        "gloss": "NAME",
+        "precision": 1.0,
+        "recall": 0.29411764705882354,
+        "support": 17
+      },
+      {
+        "class_id": 5,
+        "f1": 0.7142857142857143,
+        "gloss": "LEARN",
+        "precision": 1.0,
+        "recall": 0.5555555555555556,
+        "support": 18
+      },
+      {
+        "class_id": 6,
+        "f1": 0.625,
+        "gloss": "YES",
+        "precision": 0.5555555555555556,
+        "recall": 0.7142857142857143,
+        "support": 14
+      },
+      {
+        "class_id": 7,
+        "f1": 0.2857142857142857,
+        "gloss": "NO",
+        "precision": 0.25,
+        "recall": 0.3333333333333333,
+        "support": 18
+      },
+      {
+        "class_id": 8,
+        "f1": 0.15384615384615385,
+        "gloss": "PLEASE",
+        "precision": 0.08333333333333333,
+        "recall": 1.0,
+        "support": 18
+      },
+      {
+        "class_id": 9,
+        "f1": 0.7586206896551724,
+        "gloss": "SORRY",
+        "precision": 0.9166666666666666,
+        "recall": 0.6470588235294118,
+        "support": 17
+      },
+      {
+        "class_id": 10,
+        "f1": 0.7333333333333333,
+        "gloss": "MORE",
+        "precision": 0.8461538461538461,
+        "recall": 0.6470588235294118,
+        "support": 17
+      },
+      {
+        "class_id": 11,
+        "f1": 0.64,
+        "gloss": "FINISH",
+        "precision": 0.8,
+        "recall": 0.5333333333333333,
+        "support": 15
+      },
+      {
+        "class_id": 12,
+        "f1": 0.5416666666666666,
+        "gloss": "EAT",
+        "precision": 0.3939393939393939,
+        "recall": 0.8666666666666667,
+        "support": 15
+      },
+      {
+        "class_id": 13,
+        "f1": 0.8,
+        "gloss": "DRINK",
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "support": 15
+      },
+      {
+        "class_id": 14,
+        "f1": 0.2222222222222222,
+        "gloss": "GO",
+        "precision": 1.0,
+        "recall": 0.125,
+        "support": 16
+      },
+      {
+        "class_id": 15,
+        "f1": 0.5882352941176471,
+        "gloss": "COME",
+        "precision": 1.0,
+        "recall": 0.4166666666666667,
+        "support": 12
+      },
+      {
+        "class_id": 16,
+        "f1": 0.8571428571428571,
+        "gloss": "WANT",
+        "precision": 1.0,
+        "recall": 0.75,
+        "support": 16
+      },
+      {
+        "class_id": 17,
+        "f1": 0.375,
+        "gloss": "NEED",
+        "precision": 0.2903225806451613,
+        "recall": 0.5294117647058824,
+        "support": 17
+      },
+      {
+        "class_id": 18,
+        "f1": 0.6896551724137931,
+        "gloss": "FRIEND",
+        "precision": 0.7692307692307693,
+        "recall": 0.625,
+        "support": 16
+      },
+      {
+        "class_id": 19,
+        "f1": 0.6666666666666666,
+        "gloss": "FAMILY",
+        "precision": 0.8333333333333334,
+        "recall": 0.5555555555555556,
+        "support": 18
+      },
+      {
+        "class_id": 20,
+        "f1": 0.6666666666666666,
+        "gloss": "MOTHER",
+        "precision": 0.56,
+        "recall": 0.8235294117647058,
+        "support": 17
+      },
+      {
+        "class_id": 21,
+        "f1": 0.7058823529411765,
+        "gloss": "FATHER",
+        "precision": 0.75,
+        "recall": 0.6666666666666666,
+        "support": 18
+      },
+      {
+        "class_id": 22,
+        "f1": 0.38095238095238093,
+        "gloss": "BROTHER",
+        "precision": 0.3333333333333333,
+        "recall": 0.4444444444444444,
+        "support": 18
+      },
+      {
+        "class_id": 23,
+        "f1": 0.7058823529411765,
+        "gloss": "SISTER",
+        "precision": 0.6666666666666666,
+        "recall": 0.75,
+        "support": 16
+      },
+      {
+        "class_id": 24,
+        "f1": 0.5217391304347826,
+        "gloss": "HOME",
+        "precision": 1.0,
+        "recall": 0.35294117647058826,
+        "support": 17
+      },
+      {
+        "class_id": 25,
+        "f1": 0.10526315789473684,
+        "gloss": "SCHOOL",
+        "precision": 0.25,
+        "recall": 0.06666666666666667,
+        "support": 15
+      },
+      {
+        "class_id": 26,
+        "f1": 0.5405405405405406,
+        "gloss": "WORK",
+        "precision": 0.5263157894736842,
+        "recall": 0.5555555555555556,
+        "support": 18
+      },
+      {
+        "class_id": 27,
+        "f1": 0.5454545454545454,
+        "gloss": "PLAY",
+        "precision": 1.0,
+        "recall": 0.375,
+        "support": 16
+      },
+      {
+        "class_id": 28,
+        "f1": 0.36363636363636365,
+        "gloss": "READ",
+        "precision": 0.8,
+        "recall": 0.23529411764705882,
+        "support": 17
+      },
+      {
+        "class_id": 29,
+        "f1": 0.5,
+        "gloss": "WRITE",
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "support": 18
+      },
+      {
+        "class_id": 30,
+        "f1": 0.32,
+        "gloss": "TALK",
+        "precision": 0.5714285714285714,
+        "recall": 0.2222222222222222,
+        "support": 18
+      },
+      {
+        "class_id": 31,
+        "f1": 0.3888888888888889,
+        "gloss": "SEE",
+        "precision": 0.35,
+        "recall": 0.4375,
+        "support": 16
+      },
+      {
+        "class_id": 32,
+        "f1": 0.47619047619047616,
+        "gloss": "LOOK",
+        "precision": 1.0,
+        "recall": 0.3125,
+        "support": 16
+      },
+      {
+        "class_id": 33,
+        "f1": 0.6875,
+        "gloss": "WAIT",
+        "precision": 0.6875,
+        "recall": 0.6875,
+        "support": 16
+      },
+      {
+        "class_id": 34,
+        "f1": 0.8,
+        "gloss": "STOP",
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "support": 18
+      },
+      {
+        "class_id": 35,
+        "f1": 0.0,
+        "gloss": "AGAIN",
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 18
+      },
+      {
+        "class_id": 36,
+        "f1": 0.5454545454545454,
+        "gloss": "UNDERSTAND",
+        "precision": 0.46153846153846156,
+        "recall": 0.6666666666666666,
+        "support": 18
+      },
+      {
+        "class_id": 37,
+        "f1": 0.7906976744186046,
+        "gloss": "KNOW",
+        "precision": 0.68,
+        "recall": 0.9444444444444444,
+        "support": 18
+      },
+      {
+        "class_id": 38,
+        "f1": 0.5833333333333334,
+        "gloss": "THINK",
+        "precision": 0.7,
+        "recall": 0.5,
+        "support": 14
+      },
+      {
+        "class_id": 39,
+        "f1": 0.36363636363636365,
+        "gloss": "FEEL",
+        "precision": 1.0,
+        "recall": 0.2222222222222222,
+        "support": 18
+      },
+      {
+        "class_id": 40,
+        "f1": 0.8,
+        "gloss": "HAPPY",
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "support": 18
+      },
+      {
+        "class_id": 41,
+        "f1": 0.0,
+        "gloss": "SAD",
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 16
+      },
+      {
+        "class_id": 42,
+        "f1": 0.3,
+        "gloss": "ANGRY",
+        "precision": 1.0,
+        "recall": 0.17647058823529413,
+        "support": 17
+      },
+      {
+        "class_id": 43,
+        "f1": 0.7142857142857143,
+        "gloss": "LOVE",
+        "precision": 1.0,
+        "recall": 0.5555555555555556,
+        "support": 18
+      },
+      {
+        "class_id": 44,
+        "f1": 0.32,
+        "gloss": "LIKE",
+        "precision": 0.2033898305084746,
+        "recall": 0.75,
+        "support": 16
+      },
+      {
+        "class_id": 45,
+        "f1": 0.7692307692307693,
+        "gloss": "GOOD",
+        "precision": 0.9090909090909091,
+        "recall": 0.6666666666666666,
+        "support": 15
+      },
+      {
+        "class_id": 46,
+        "f1": 0.4727272727272727,
+        "gloss": "BAD",
+        "precision": 0.3333333333333333,
+        "recall": 0.8125,
+        "support": 16
+      },
+      {
+        "class_id": 47,
+        "f1": 0.2,
+        "gloss": "BIG",
+        "precision": 1.0,
+        "recall": 0.1111111111111111,
+        "support": 18
+      },
+      {
+        "class_id": 48,
+        "f1": 0.7333333333333333,
+        "gloss": "SMALL",
+        "precision": 0.9166666666666666,
+        "recall": 0.6111111111111112,
+        "support": 18
+      },
+      {
+        "class_id": 49,
+        "f1": 0.5714285714285714,
+        "gloss": "HOT",
+        "precision": 0.5263157894736842,
+        "recall": 0.625,
+        "support": 16
+      },
+      {
+        "class_id": 50,
+        "f1": 0.47368421052631576,
+        "gloss": "COLD",
+        "precision": 0.42857142857142855,
+        "recall": 0.5294117647058824,
+        "support": 17
+      },
+      {
+        "class_id": 51,
+        "f1": 0.3157894736842105,
+        "gloss": "DAY",
+        "precision": 0.75,
+        "recall": 0.2,
+        "support": 15
+      },
+      {
+        "class_id": 52,
+        "f1": 0.47619047619047616,
+        "gloss": "NIGHT",
+        "precision": 1.0,
+        "recall": 0.3125,
+        "support": 16
+      },
+      {
+        "class_id": 53,
+        "f1": 0.7407407407407407,
+        "gloss": "TIME",
+        "precision": 1.0,
+        "recall": 0.5882352941176471,
+        "support": 17
+      },
+      {
+        "class_id": 54,
+        "f1": 0.7407407407407407,
+        "gloss": "NOW",
+        "precision": 1.0,
+        "recall": 0.5882352941176471,
+        "support": 17
+      },
+      {
+        "class_id": 55,
+        "f1": 0.5161290322580645,
+        "gloss": "LATER",
+        "precision": 0.5714285714285714,
+        "recall": 0.47058823529411764,
+        "support": 17
+      },
+      {
+        "class_id": 56,
+        "f1": 0.6363636363636364,
+        "gloss": "MORNING",
+        "precision": 1.0,
+        "recall": 0.4666666666666667,
+        "support": 15
+      },
+      {
+        "class_id": 57,
+        "f1": 0.2857142857142857,
+        "gloss": "EVENING",
+        "precision": 0.6,
+        "recall": 0.1875,
+        "support": 16
+      },
+      {
+        "class_id": 58,
+        "f1": 0.7222222222222222,
+        "gloss": "WHERE",
+        "precision": 0.5652173913043478,
+        "recall": 1.0,
+        "support": 13
+      },
+      {
+        "class_id": 59,
+        "f1": 0.7272727272727273,
+        "gloss": "WHO",
+        "precision": 0.8,
+        "recall": 0.6666666666666666,
+        "support": 18
+      }
+    ],
+    "reliability": [
+      {
+        "accuracy": 0.0,
+        "avg_confidence": 0.0,
+        "bin": "0.0-0.1",
+        "count": 0,
+        "gap": 0.0
+      },
+      {
+        "accuracy": 0.0,
+        "avg_confidence": 0.0,
+        "bin": "0.1-0.2",
+        "count": 0,
+        "gap": 0.0
+      },
+      {
+        "accuracy": 0.36363636363636365,
+        "avg_confidence": 0.26584818823771045,
+        "bin": "0.2-0.3",
+        "count": 11,
+        "gap": 0.0977881753986532
+      },
+      {
+        "accuracy": 0.35185185185185186,
+        "avg_confidence": 0.35668590388916155,
+        "bin": "0.3-0.4",
+        "count": 54,
+        "gap": 0.0048340520373096885
+      },
+      {
+        "accuracy": 0.38823529411764707,
+        "avg_confidence": 0.4580998599529266,
+        "bin": "0.4-0.5",
+        "count": 85,
+        "gap": 0.06986456583527956
+      },
+      {
+        "accuracy": 0.2962962962962963,
+        "avg_confidence": 0.5500758676617233,
+        "bin": "0.5-0.6",
+        "count": 108,
+        "gap": 0.25377957136542706
+      },
+      {
+        "accuracy": 0.46875,
+        "avg_confidence": 0.6503506867835919,
+        "bin": "0.6-0.7",
+        "count": 96,
+        "gap": 0.18160068678359187
+      },
+      {
+        "accuracy": 0.55,
+        "avg_confidence": 0.7534389118353526,
+        "bin": "0.7-0.8",
+        "count": 120,
+        "gap": 0.20343891183535256
+      },
+      {
+        "accuracy": 0.5811965811965812,
+        "avg_confidence": 0.8535150946714939,
+        "bin": "0.8-0.9",
+        "count": 117,
+        "gap": 0.27231851347491265
+      },
+      {
+        "accuracy": 0.5851851851851851,
+        "avg_confidence": 0.9736371261102182,
+        "bin": "0.9-1.0",
+        "count": 405,
+        "gap": 0.3884519409250331
+      }
+    ],
+    "top1": 0.5060240963855421,
+    "top5": 0.7771084337349398,
+    "top_confusions": [
+      {
+        "count": 12,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "HELP"
+      },
+      {
+        "count": 11,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "HOME"
+      },
+      {
+        "count": 8,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "BROTHER"
+      },
+      {
+        "count": 7,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "FAMILY"
+      },
+      {
+        "count": 7,
+        "predicted_gloss": "BAD",
+        "true_gloss": "SAD"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "WATER"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "NO",
+        "true_gloss": "NAME"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "SEE",
+        "true_gloss": "NO"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "FINISH"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "MOTHER",
+        "true_gloss": "FATHER"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "PLAY"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "READ"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "WRITE"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "LIKE",
+        "true_gloss": "TALK"
+      },
+      {
+        "count": 6,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "NIGHT"
+      },
+      {
+        "count": 5,
+        "predicted_gloss": "HOT",
+        "true_gloss": "WATER"
+      },
+      {
+        "count": 5,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "DRINK"
+      },
+      {
+        "count": 5,
+        "predicted_gloss": "LIKE",
+        "true_gloss": "GO"
+      },
+      {
+        "count": 5,
+        "predicted_gloss": "PLEASE",
+        "true_gloss": "FRIEND"
+      },
+      {
+        "count": 5,
+        "predicted_gloss": "BAD",
+        "true_gloss": "SCHOOL"
+      }
+    ]
+  },
+  "model": "linear_probe",
+  "n_test": 996,
+  "split": "signer_holdout"
+}

@@ -3,10 +3,10 @@ gold:
   checkpoint: artifacts/checkpoints/pose_transformer_signer_holdout.pt
   split: signer_holdout
   baseline:
-    top1: 0.0
-    top5: 0.0
-    macro_f1: 0.0
-    max_fairness_gap: 1.0
+    top1: 0.666667
+    top5: 0.916667
+    macro_f1: 0.676525
+    max_fairness_gap: 0.604059
   tolerance:
     top1_absolute: 0.02
     top5_absolute: 0.02

@@ -139,6 +139,216 @@ def _cmd_label_budget(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_evaluate(args: argparse.Namespace) -> int:
+    import json
+
+    from signstream.config import eval_config
+    from signstream.eval.report import evaluate_checkpoint
+
+    config = eval_config(args.config)
+    report = evaluate_checkpoint(args.checkpoint, split=args.split, config=config)
+    print(
+        json.dumps(
+            {
+                "model": report["model"],
+                "split": report["split"],
+                "top1": report["metrics"]["top1"],
+                "top5": report["metrics"]["top5"],
+                "macro_f1": report["metrics"]["macro_f1"],
+                "ece": report["metrics"]["ece"],
+                "fairness_gap": report["fairness"]["fairness_gap"],
+                "high_low_top1_gap": report["fairness"]["high_low_top1_gap"],
+                "artifacts": report["artifacts"],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _print_events(title: str, events: list[object]) -> None:
+    print(title)
+    for event in events:
+        print(
+            f"  {event.start_s:6.3f}s - {event.end_s:6.3f}s  {event.gloss:<14s} "
+            f"confidence={event.confidence:.3f}"
+        )
+
+
+def _cmd_decode(args: argparse.Namespace) -> int:
+    import json
+    from pathlib import Path
+
+    from signstream.config import eval_config
+    from signstream.data.keypoints import MissingDependencyError
+    from signstream.stream.decoder import (
+        decode_video,
+        decode_webcam,
+        decoder_from_checkpoint,
+        evaluate_continuous,
+    )
+    from signstream.stream.windowing import build_continuous_dataset
+
+    config = eval_config(args.config)
+    try:
+        decoder, payload = decoder_from_checkpoint(
+            args.checkpoint, config=config, threshold=args.threshold
+        )
+    except FileNotFoundError as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
+
+    try:
+        if args.video:
+            result, _ = decode_video(args.video, decoder)
+            print(f"Decoded video: {args.video}")
+            _print_events("Gloss events:", result.events)
+            print(f"Abstain rate: {result.abstain_rate:.3f}")
+            return 0
+        if args.webcam:
+            result, _ = decode_webcam(decoder)
+            _print_events("Gloss events:", result.events)
+            print(f"Abstain rate: {result.abstain_rate:.3f}")
+            return 0
+    except MissingDependencyError as exc:
+        print(f"Capture dependencies unavailable: {exc}", file=sys.stderr)
+        return 2
+
+    directory = Path(args.input)
+    if not (directory / "index.json").exists():
+        build_continuous_dataset(eval_cfg=config)
+    payload = evaluate_continuous(
+        decoder,
+        continuous_dir=directory,
+        thresholds=config.threshold_sweep,
+        primary_threshold=args.threshold,
+    )
+    reports = Path(config.reports_dir)
+    reports.mkdir(parents=True, exist_ok=True)
+    report_path = reports / "continuous_eval.json"
+    report_path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+    lines = [
+        "# Continuous Decoding",
+        "",
+        f"Sentences: {payload['n_sentences']}, gold signs: {payload['total_gold_signs']}.",
+        "",
+        "| Threshold | Precision | Recall | F1 | Gloss error rate | Abstain rate | Events |",
+        "|---:|---:|---:|---:|---:|---:|---:|",
+    ]
+    for row in payload["threshold_sweep"]:
+        lines.append(
+            f"| {row['threshold']:.1f} | {row['precision']:.3f} | {row['recall']:.3f} | "
+            f"{row['f1']:.3f} | {row['gloss_error_rate']:.3f} | "
+            f"{row['abstain_rate']:.3f} | {row['predicted_events']} |"
+        )
+    (reports / "continuous_eval.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    for example in payload["examples"]:
+        print(
+            f"{example['sentence_id']} gold={' '.join(example['gold_glosses'])}"
+        )
+        for event in example["events"]:
+            print(
+                f"  {event['start_s']:6.3f}s - {event['end_s']:6.3f}s  "
+                f"{event['gloss']:<14s} confidence={event['confidence']:.3f}"
+            )
+    primary = payload["primary"]
+    print(
+        f"Primary threshold={primary['threshold']:.2f}: P={primary['precision']:.3f} "
+        f"R={primary['recall']:.3f} F1={primary['f1']:.3f} "
+        f"GER={primary['gloss_error_rate']:.3f} abstain={primary['abstain_rate']:.3f}"
+    )
+    print(f"Wrote {report_path}")
+    return 0
+
+
+def _cmd_regress(args: argparse.Namespace) -> int:
+    import json
+    from pathlib import Path
+
+    import yaml
+
+    from signstream.config import eval_config
+    from signstream.eval.gold import build_gold_set, evaluate_gold
+    from signstream.eval.report import evaluate_checkpoint
+
+    thresholds = yaml.safe_load(Path(args.config).read_text(encoding="utf-8"))
+    gold_cfg = thresholds.get("gold", {})
+    checkpoint = args.checkpoint or gold_cfg.get("checkpoint")
+    if not checkpoint or not Path(checkpoint).exists():
+        print(
+            f"Regression checkpoint missing: {checkpoint}. Train it or pass --checkpoint.",
+            file=sys.stderr,
+        )
+        return 2
+    gold_path = Path(eval_config().gold_path)
+    if not gold_path.exists():
+        build_gold_set()
+    gold_metrics = evaluate_gold(checkpoint, gold_path=gold_path)
+    split = str(gold_cfg.get("split", "signer_holdout"))
+    evaluation = evaluate_checkpoint(checkpoint, split=split)
+    fairness_gap = float(evaluation["fairness"]["fairness_gap"])
+    actual = {
+        "top1": float(gold_metrics["top1"]),
+        "top5": float(gold_metrics["top5"]),
+        "macro_f1": float(gold_metrics["macro_f1"]),
+        "max_fairness_gap": fairness_gap,
+    }
+    baseline = gold_cfg.get("baseline", {})
+    tolerance = gold_cfg.get("tolerance", {})
+    checks: list[dict[str, object]] = []
+    failures: list[str] = []
+    directions = {
+        "top1": "min",
+        "top5": "min",
+        "macro_f1": "min",
+        "max_fairness_gap": "max",
+    }
+    for key, direction in directions.items():
+        expected = float(baseline.get(key, 0.0))
+        tol = float(tolerance.get(f"{key}_absolute", 0.02))
+        value = actual[key]
+        passed = value >= expected - tol if direction == "min" else value <= expected + tol
+        if not passed:
+            failures.append(key)
+        checks.append(
+            {
+                "metric": key,
+                "actual": value,
+                "baseline": expected,
+                "tolerance": tol,
+                "direction": direction,
+                "passed": bool(passed),
+            }
+        )
+    payload = {
+        "checkpoint": str(checkpoint),
+        "gold_metrics": gold_metrics,
+        "actual": actual,
+        "checks": checks,
+        "passed": not failures,
+        "failures": failures,
+    }
+    reports = Path("artifacts/reports")
+    reports.mkdir(parents=True, exist_ok=True)
+    (reports / "regression.json").write_text(
+        json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8"
+    )
+    print("| Metric | Actual | Baseline | Tolerance | Direction | Status |")
+    print("|---|---:|---:|---:|---|---|")
+    for check in checks:
+        print(
+            f"| {check['metric']} | {check['actual']:.4f} | {check['baseline']:.4f} | "
+            f"{check['tolerance']:.4f} | {check['direction']} | "
+            f"{'PASS' if check['passed'] else 'FAIL'} |"
+        )
+    if failures:
+        print(f"Regression gate failed: {', '.join(failures)}", file=sys.stderr)
+        return 1
+    print("Regression gate passed.")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Build the complete CLI parser with all pipeline stages."""
     parser = argparse.ArgumentParser(
@@ -177,7 +387,7 @@ def build_parser() -> argparse.ArgumentParser:
     evaluate.add_argument("--checkpoint", required=True)
     evaluate.add_argument("--split", default="signer_holdout", choices=["random", "signer_holdout"])
     evaluate.add_argument("--config", default="configs/eval.yaml")
-    evaluate.set_defaults(func=_stub("evaluate"))
+    evaluate.set_defaults(func=_cmd_evaluate)
 
     label_budget = subparsers.add_parser("label-budget", help="Measure test accuracy vs label budget")
     label_budget.add_argument("--model", default="pose_transformer")
@@ -191,7 +401,7 @@ def build_parser() -> argparse.ArgumentParser:
     decode.add_argument("--threshold", type=float, default=0.60)
     decode.add_argument("--checkpoint", default="artifacts/checkpoints/pose_transformer_signer_holdout.pt")
     decode.add_argument("--config", default="configs/eval.yaml")
-    decode.set_defaults(func=_stub("decode"))
+    decode.set_defaults(func=_cmd_decode)
 
     export = subparsers.add_parser("export-onnx", help="Export a checkpoint and verify ONNX parity")
     export.add_argument(
@@ -214,7 +424,7 @@ def build_parser() -> argparse.ArgumentParser:
     regress = subparsers.add_parser("regress", help="Run the gold-set regression gate")
     regress.add_argument("--config", default="configs/thresholds.yaml")
     regress.add_argument("--checkpoint", default=None)
-    regress.set_defaults(func=_stub("regress"))
+    regress.set_defaults(func=_cmd_regress)
 
     serve = subparsers.add_parser("serve", help="Serve the inference API")
     serve.add_argument("--host", default="0.0.0.0")

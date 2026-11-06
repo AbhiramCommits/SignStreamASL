@@ -1,0 +1,29 @@
+{
+  "best_epoch": 1,
+  "best_val": {
+    "loss": 0.4671337604522705,
+    "n": 710.0,
+    "top1": 0.8690140845070422,
+    "top5": 0.9901408450704225
+  },
+  "checkpoint": "artifacts/checkpoints/linear_probe_random.pt",
+  "epochs": 20,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.4671337604522705,
+      "n": 710.0,
+      "top1": 0.8690140845070422,
+      "top5": 0.9901408450704225
+    }
+  ],
+  "manifest_hash": "af1b378a9531b50d5e83ef489532ad684ee896a83248afa99c86c9941d15224b",
+  "model": "linear_probe",
+  "parameters": 25620,
+  "run_id": "20261105T235405_linear_probe_random_2cfd9e",
+  "seed": 7,
+  "split": "random",
+  "train_examples": 3302,
+  "train_fraction": 1.0,
+  "val_examples": 710
+}

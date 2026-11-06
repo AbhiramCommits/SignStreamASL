@@ -259,6 +259,22 @@ class MediaPipeExtractor:
             dtype=np.float32,
         )
 
+
+    def process_frame(self, frame_bgr: np.ndarray) -> np.ndarray:
+        """Extract one 61-landmark frame from a BGR webcam/video frame."""
+        frame_rgb = self._cv2.cvtColor(frame_bgr, self._cv2.COLOR_BGR2RGB)
+        result = self._holistic.process(frame_rgb)
+        left = self._landmarks_to_array(result.left_hand_landmarks, 21)
+        right = self._landmarks_to_array(result.right_hand_landmarks, 21)
+        pose = np.full((19, 3), np.nan, dtype=np.float32)
+        if result.pose_landmarks is not None:
+            source = np.asarray(
+                [(p.x, p.y, p.z) for p in result.pose_landmarks.landmark],
+                dtype=np.float32,
+            )
+            pose = source[list(POSE_MEDIAPIPE_INDICES)]
+        return np.concatenate([left, right, pose], axis=0).astype(np.float32)
+
     def extract(self, video_path: str | Path, *, normalize: bool = True) -> np.ndarray:
         """Extract one normalized keypoint sequence from a video.
 
@@ -283,18 +299,7 @@ class MediaPipeExtractor:
                 ok, frame_bgr = capture.read()
                 if not ok:
                     break
-                frame_rgb = self._cv2.cvtColor(frame_bgr, self._cv2.COLOR_BGR2RGB)
-                result = self._holistic.process(frame_rgb)
-                left = self._landmarks_to_array(result.left_hand_landmarks, 21)
-                right = self._landmarks_to_array(result.right_hand_landmarks, 21)
-                pose = np.full((19, 3), np.nan, dtype=np.float32)
-                if result.pose_landmarks is not None:
-                    source = np.asarray(
-                        [(p.x, p.y, p.z) for p in result.pose_landmarks.landmark],
-                        dtype=np.float32,
-                    )
-                    pose = source[list(POSE_MEDIAPIPE_INDICES)]
-                frames.append(np.concatenate([left, right, pose], axis=0))
+                frames.append(self.process_frame(frame_bgr))
         finally:
             capture.release()
 

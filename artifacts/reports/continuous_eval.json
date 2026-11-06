@@ -1,0 +1,171 @@
+{
+  "decoder": {
+    "cooldown_s": 0.35,
+    "ema_windows": 3,
+    "fps": 30,
+    "min_duration_s": 0.35,
+    "stride": 8,
+    "window": 48
+  },
+  "examples": [
+    {
+      "events": [],
+      "gold_glosses": [
+        "LOVE",
+        "NOW",
+        "NOW",
+        "PLEASE",
+        "KNOW"
+      ],
+      "sentence_id": "sentence_000"
+    },
+    {
+      "events": [],
+      "gold_glosses": [
+        "WAIT",
+        "COLD",
+        "LOVE",
+        "SISTER",
+        "HOME"
+      ],
+      "sentence_id": "sentence_001"
+    },
+    {
+      "events": [
+        {
+          "confidence": 0.6328,
+          "end_s": 4.533,
+          "gloss": "HELLO",
+          "gloss_id": 0,
+          "start_s": 2.933
+        }
+      ],
+      "gold_glosses": [
+        "COLD",
+        "HELLO",
+        "HOT",
+        "COLD"
+      ],
+      "sentence_id": "sentence_002"
+    },
+    {
+      "events": [
+        {
+          "confidence": 0.6344,
+          "end_s": 4.0,
+          "gloss": "BAD",
+          "gloss_id": 46,
+          "start_s": 2.4
+        }
+      ],
+      "gold_glosses": [
+        "TALK",
+        "FEEL",
+        "GO",
+        "SORRY",
+        "SORRY",
+        "MOTHER",
+        "KNOW",
+        "LEARN"
+      ],
+      "sentence_id": "sentence_003"
+    },
+    {
+      "events": [
+        {
+          "confidence": 0.6697,
+          "end_s": 2.667,
+          "gloss": "EVENING",
+          "gloss_id": 57,
+          "start_s": 1.067
+        }
+      ],
+      "gold_glosses": [
+        "EVENING",
+        "BROTHER",
+        "STOP",
+        "NOW"
+      ],
+      "sentence_id": "sentence_004"
+    }
+  ],
+  "n_sentences": 150,
+  "primary": {
+    "abstain_rate": 0.9546351016039943,
+    "f1": 0.19127205199628594,
+    "gloss_error_rate": 0.8799559471365639,
+    "gold_events": 908,
+    "matches": 103,
+    "mean_events_per_sentence": 1.1266666666666667,
+    "precision": 0.6094674556213018,
+    "predicted_events": 169,
+    "recall": 0.11343612334801761,
+    "threshold": 0.6
+  },
+  "primary_threshold": 0.6,
+  "split": "signer_holdout",
+  "threshold_sweep": [
+    {
+      "abstain_rate": 0.5007795320857387,
+      "f1": 0.4044568245125348,
+      "gloss_error_rate": 0.6618942731277533,
+      "gold_events": 908,
+      "matches": 363,
+      "mean_events_per_sentence": 5.913333333333333,
+      "precision": 0.4092446448703495,
+      "predicted_events": 887,
+      "recall": 0.3997797356828194,
+      "threshold": 0.3
+    },
+    {
+      "abstain_rate": 0.886458146611471,
+      "f1": 0.3335907335907336,
+      "gloss_error_rate": 0.7599118942731278,
+      "gold_events": 908,
+      "matches": 216,
+      "mean_events_per_sentence": 2.58,
+      "precision": 0.5581395348837209,
+      "predicted_events": 387,
+      "recall": 0.23788546255506607,
+      "threshold": 0.5
+    },
+    {
+      "abstain_rate": 0.9546351016039943,
+      "f1": 0.19127205199628594,
+      "gloss_error_rate": 0.8799559471365639,
+      "gold_events": 908,
+      "matches": 103,
+      "mean_events_per_sentence": 1.1266666666666667,
+      "precision": 0.6094674556213018,
+      "predicted_events": 169,
+      "recall": 0.11343612334801761,
+      "threshold": 0.6
+    },
+    {
+      "abstain_rate": 0.98625274671272,
+      "f1": 0.05445026178010472,
+      "gloss_error_rate": 0.9658590308370044,
+      "gold_events": 908,
+      "matches": 26,
+      "mean_events_per_sentence": 0.31333333333333335,
+      "precision": 0.5531914893617021,
+      "predicted_events": 47,
+      "recall": 0.028634361233480177,
+      "threshold": 0.7
+    },
+    {
+      "abstain_rate": 0.9974009174820025,
+      "f1": 0.017429193899782137,
+      "gloss_error_rate": 0.9889867841409692,
+      "gold_events": 908,
+      "matches": 8,
+      "mean_events_per_sentence": 0.06666666666666667,
+      "precision": 0.8,
+      "predicted_events": 10,
+      "recall": 0.00881057268722467,
+      "threshold": 0.8
+    }
+  ],
+  "total_frames": 56280,
+  "total_gold_signs": 908
+}

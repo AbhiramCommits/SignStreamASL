@@ -1,0 +1,1579 @@
+{
+  "clips": [
+    {
+      "clip_id": "g00_S12_t00",
+      "gloss": "HELLO",
+      "label_id": 0
+    },
+    {
+      "clip_id": "g00_S12_t01",
+      "gloss": "HELLO",
+      "label_id": 0
+    },
+    {
+      "clip_id": "g00_S13_t00",
+      "gloss": "HELLO",
+      "label_id": 0
+    },
+    {
+      "clip_id": "g00_S13_t01",
+      "gloss": "HELLO",
+      "label_id": 0
+    },
+    {
+      "clip_id": "g00_S14_t00",
+      "gloss": "HELLO",
+      "label_id": 0
+    },
+    {
+      "clip_id": "g01_S12_t00",
+      "gloss": "THANK-YOU",
+      "label_id": 1
+    },
+    {
+      "clip_id": "g01_S12_t01",
+      "gloss": "THANK-YOU",
+      "label_id": 1
+    },
+    {
+      "clip_id": "g01_S13_t00",
+      "gloss": "THANK-YOU",
+      "label_id": 1
+    },
+    {
+      "clip_id": "g01_S13_t01",
+      "gloss": "THANK-YOU",
+      "label_id": 1
+    },
+    {
+      "clip_id": "g01_S14_t00",
+      "gloss": "THANK-YOU",
+      "label_id": 1
+    },
+    {
+      "clip_id": "g02_S12_t00",
+      "gloss": "HELP",
+      "label_id": 2
+    },
+    {
+      "clip_id": "g02_S12_t01",
+      "gloss": "HELP",
+      "label_id": 2
+    },
+    {
+      "clip_id": "g02_S13_t00",
+      "gloss": "HELP",
+      "label_id": 2
+    },
+    {
+      "clip_id": "g02_S13_t01",
+      "gloss": "HELP",
+      "label_id": 2
+    },
+    {
+      "clip_id": "g02_S14_t00",
+      "gloss": "HELP",
+      "label_id": 2
+    },
+    {
+      "clip_id": "g03_S12_t00",
+      "gloss": "WATER",
+      "label_id": 3
+    },
+    {
+      "clip_id": "g03_S12_t01",
+      "gloss": "WATER",
+      "label_id": 3
+    },
+    {
+      "clip_id": "g03_S13_t00",
+      "gloss": "WATER",
+      "label_id": 3
+    },
+    {
+      "clip_id": "g03_S13_t01",
+      "gloss": "WATER",
+      "label_id": 3
+    },
+    {
+      "clip_id": "g03_S14_t00",
+      "gloss": "WATER",
+      "label_id": 3
+    },
+    {
+      "clip_id": "g04_S12_t00",
+      "gloss": "NAME",
+      "label_id": 4
+    },
+    {
+      "clip_id": "g04_S12_t01",
+      "gloss": "NAME",
+      "label_id": 4
+    },
+    {
+      "clip_id": "g04_S13_t00",
+      "gloss": "NAME",
+      "label_id": 4
+    },
+    {
+      "clip_id": "g04_S13_t01",
+      "gloss": "NAME",
+      "label_id": 4
+    },
+    {
+      "clip_id": "g04_S14_t00",
+      "gloss": "NAME",
+      "label_id": 4
+    },
+    {
+      "clip_id": "g05_S12_t00",
+      "gloss": "LEARN",
+      "label_id": 5
+    },
+    {
+      "clip_id": "g05_S12_t01",
+      "gloss": "LEARN",
+      "label_id": 5
+    },
+    {
+      "clip_id": "g05_S13_t00",
+      "gloss": "LEARN",
+      "label_id": 5
+    },
+    {
+      "clip_id": "g05_S13_t01",
+      "gloss": "LEARN",
+      "label_id": 5
+    },
+    {
+      "clip_id": "g05_S14_t00",
+      "gloss": "LEARN",
+      "label_id": 5
+    },
+    {
+      "clip_id": "g06_S12_t00",
+      "gloss": "YES",
+      "label_id": 6
+    },
+    {
+      "clip_id": "g06_S12_t02",
+      "gloss": "YES",
+      "label_id": 6
+    },
+    {
+      "clip_id": "g06_S13_t00",
+      "gloss": "YES",
+      "label_id": 6
+    },
+    {
+      "clip_id": "g06_S13_t02",
+      "gloss": "YES",
+      "label_id": 6
+    },
+    {
+      "clip_id": "g06_S14_t00",
+      "gloss": "YES",
+      "label_id": 6
+    },
+    {
+      "clip_id": "g07_S12_t00",
+      "gloss": "NO",
+      "label_id": 7
+    },
+    {
+      "clip_id": "g07_S12_t01",
+      "gloss": "NO",
+      "label_id": 7
+    },
+    {
+      "clip_id": "g07_S13_t00",
+      "gloss": "NO",
+      "label_id": 7
+    },
+    {
+      "clip_id": "g07_S13_t01",
+      "gloss": "NO",
+      "label_id": 7
+    },
+    {
+      "clip_id": "g07_S14_t00",
+      "gloss": "NO",
+      "label_id": 7
+    },
+    {
+      "clip_id": "g08_S12_t00",
+      "gloss": "PLEASE",
+      "label_id": 8
+    },
+    {
+      "clip_id": "g08_S12_t01",
+      "gloss": "PLEASE",
+      "label_id": 8
+    },
+    {
+      "clip_id": "g08_S13_t00",
+      "gloss": "PLEASE",
+      "label_id": 8
+    },
+    {
+      "clip_id": "g08_S13_t01",
+      "gloss": "PLEASE",
+      "label_id": 8
+    },
+    {
+      "clip_id": "g08_S14_t00",
+      "gloss": "PLEASE",
+      "label_id": 8
+    },
+    {
+      "clip_id": "g09_S12_t00",
+      "gloss": "SORRY",
+      "label_id": 9
+    },
+    {
+      "clip_id": "g09_S12_t01",
+      "gloss": "SORRY",
+      "label_id": 9
+    },
+    {
+      "clip_id": "g09_S13_t00",
+      "gloss": "SORRY",
+      "label_id": 9
+    },
+    {
+      "clip_id": "g09_S13_t01",
+      "gloss": "SORRY",
+      "label_id": 9
+    },
+    {
+      "clip_id": "g09_S14_t00",
+      "gloss": "SORRY",
+      "label_id": 9
+    },
+    {
+      "clip_id": "g10_S12_t00",
+      "gloss": "MORE",
+      "label_id": 10
+    },
+    {
+      "clip_id": "g10_S12_t01",
+      "gloss": "MORE",
+      "label_id": 10
+    },
+    {
+      "clip_id": "g10_S13_t00",
+      "gloss": "MORE",
+      "label_id": 10
+    },
+    {
+      "clip_id": "g10_S13_t01",
+      "gloss": "MORE",
+      "label_id": 10
+    },
+    {
+      "clip_id": "g10_S14_t00",
+      "gloss": "MORE",
+      "label_id": 10
+    },
+    {
+      "clip_id": "g11_S12_t00",
+      "gloss": "FINISH",
+      "label_id": 11
+    },
+    {
+      "clip_id": "g11_S12_t01",
+      "gloss": "FINISH",
+      "label_id": 11
+    },
+    {
+      "clip_id": "g11_S13_t00",
+      "gloss": "FINISH",
+      "label_id": 11
+    },
+    {
+      "clip_id": "g11_S13_t01",
+      "gloss": "FINISH",
+      "label_id": 11
+    },
+    {
+      "clip_id": "g11_S14_t00",
+      "gloss": "FINISH",
+      "label_id": 11
+    },
+    {
+      "clip_id": "g12_S12_t00",
+      "gloss": "EAT",
+      "label_id": 12
+    },
+    {
+      "clip_id": "g12_S12_t01",
+      "gloss": "EAT",
+      "label_id": 12
+    },
+    {
+      "clip_id": "g12_S13_t00",
+      "gloss": "EAT",
+      "label_id": 12
+    },
+    {
+      "clip_id": "g12_S13_t01",
+      "gloss": "EAT",
+      "label_id": 12
+    },
+    {
+      "clip_id": "g12_S14_t00",
+      "gloss": "EAT",
+      "label_id": 12
+    },
+    {
+      "clip_id": "g13_S12_t00",
+      "gloss": "DRINK",
+      "label_id": 13
+    },
+    {
+      "clip_id": "g13_S12_t02",
+      "gloss": "DRINK",
+      "label_id": 13
+    },
+    {
+      "clip_id": "g13_S13_t00",
+      "gloss": "DRINK",
+      "label_id": 13
+    },
+    {
+      "clip_id": "g13_S13_t01",
+      "gloss": "DRINK",
+      "label_id": 13
+    },
+    {
+      "clip_id": "g13_S14_t00",
+      "gloss": "DRINK",
+      "label_id": 13
+    },
+    {
+      "clip_id": "g14_S12_t00",
+      "gloss": "GO",
+      "label_id": 14
+    },
+    {
+      "clip_id": "g14_S12_t01",
+      "gloss": "GO",
+      "label_id": 14
+    },
+    {
+      "clip_id": "g14_S13_t00",
+      "gloss": "GO",
+      "label_id": 14
+    },
+    {
+      "clip_id": "g14_S13_t01",
+      "gloss": "GO",
+      "label_id": 14
+    },
+    {
+      "clip_id": "g14_S14_t00",
+      "gloss": "GO",
+      "label_id": 14
+    },
+    {
+      "clip_id": "g15_S12_t00",
+      "gloss": "COME",
+      "label_id": 15
+    },
+    {
+      "clip_id": "g15_S12_t01",
+      "gloss": "COME",
+      "label_id": 15
+    },
+    {
+      "clip_id": "g15_S13_t04",
+      "gloss": "COME",
+      "label_id": 15
+    },
+    {
+      "clip_id": "g15_S14_t00",
+      "gloss": "COME",
+      "label_id": 15
+    },
+    {
+      "clip_id": "g15_S14_t01",
+      "gloss": "COME",
+      "label_id": 15
+    },
+    {
+      "clip_id": "g16_S12_t00",
+      "gloss": "WANT",
+      "label_id": 16
+    },
+    {
+      "clip_id": "g16_S12_t01",
+      "gloss": "WANT",
+      "label_id": 16
+    },
+    {
+      "clip_id": "g16_S13_t00",
+      "gloss": "WANT",
+      "label_id": 16
+    },
+    {
+      "clip_id": "g16_S13_t01",
+      "gloss": "WANT",
+      "label_id": 16
+    },
+    {
+      "clip_id": "g16_S14_t01",
+      "gloss": "WANT",
+      "label_id": 16
+    },
+    {
+      "clip_id": "g17_S12_t00",
+      "gloss": "NEED",
+      "label_id": 17
+    },
+    {
+      "clip_id": "g17_S12_t01",
+      "gloss": "NEED",
+      "label_id": 17
+    },
+    {
+      "clip_id": "g17_S13_t00",
+      "gloss": "NEED",
+      "label_id": 17
+    },
+    {
+      "clip_id": "g17_S13_t01",
+      "gloss": "NEED",
+      "label_id": 17
+    },
+    {
+      "clip_id": "g17_S14_t01",
+      "gloss": "NEED",
+      "label_id": 17
+    },
+    {
+      "clip_id": "g18_S12_t00",
+      "gloss": "FRIEND",
+      "label_id": 18
+    },
+    {
+      "clip_id": "g18_S12_t01",
+      "gloss": "FRIEND",
+      "label_id": 18
+    },
+    {
+      "clip_id": "g18_S13_t00",
+      "gloss": "FRIEND",
+      "label_id": 18
+    },
+    {
+      "clip_id": "g18_S13_t01",
+      "gloss": "FRIEND",
+      "label_id": 18
+    },
+    {
+      "clip_id": "g18_S14_t00",
+      "gloss": "FRIEND",
+      "label_id": 18
+    },
+    {
+      "clip_id": "g19_S12_t00",
+      "gloss": "FAMILY",
+      "label_id": 19
+    },
+    {
+      "clip_id": "g19_S12_t01",
+      "gloss": "FAMILY",
+      "label_id": 19
+    },
+    {
+      "clip_id": "g19_S13_t00",
+      "gloss": "FAMILY",
+      "label_id": 19
+    },
+    {
+      "clip_id": "g19_S13_t01",
+      "gloss": "FAMILY",
+      "label_id": 19
+    },
+    {
+      "clip_id": "g19_S14_t00",
+      "gloss": "FAMILY",
+      "label_id": 19
+    },
+    {
+      "clip_id": "g20_S12_t00",
+      "gloss": "MOTHER",
+      "label_id": 20
+    },
+    {
+      "clip_id": "g20_S12_t01",
+      "gloss": "MOTHER",
+      "label_id": 20
+    },
+    {
+      "clip_id": "g20_S13_t00",
+      "gloss": "MOTHER",
+      "label_id": 20
+    },
+    {
+      "clip_id": "g20_S13_t01",
+      "gloss": "MOTHER",
+      "label_id": 20
+    },
+    {
+      "clip_id": "g20_S14_t00",
+      "gloss": "MOTHER",
+      "label_id": 20
+    },
+    {
+      "clip_id": "g21_S12_t00",
+      "gloss": "FATHER",
+      "label_id": 21
+    },
+    {
+      "clip_id": "g21_S12_t01",
+      "gloss": "FATHER",
+      "label_id": 21
+    },
+    {
+      "clip_id": "g21_S13_t00",
+      "gloss": "FATHER",
+      "label_id": 21
+    },
+    {
+      "clip_id": "g21_S13_t01",
+      "gloss": "FATHER",
+      "label_id": 21
+    },
+    {
+      "clip_id": "g21_S14_t00",
+      "gloss": "FATHER",
+      "label_id": 21
+    },
+    {
+      "clip_id": "g22_S12_t00",
+      "gloss": "BROTHER",
+      "label_id": 22
+    },
+    {
+      "clip_id": "g22_S12_t01",
+      "gloss": "BROTHER",
+      "label_id": 22
+    },
+    {
+      "clip_id": "g22_S13_t00",
+      "gloss": "BROTHER",
+      "label_id": 22
+    },
+    {
+      "clip_id": "g22_S13_t01",
+      "gloss": "BROTHER",
+      "label_id": 22
+    },
+    {
+      "clip_id": "g22_S14_t00",
+      "gloss": "BROTHER",
+      "label_id": 22
+    },
+    {
+      "clip_id": "g23_S12_t00",
+      "gloss": "SISTER",
+      "label_id": 23
+    },
+    {
+      "clip_id": "g23_S12_t03",
+      "gloss": "SISTER",
+      "label_id": 23
+    },
+    {
+      "clip_id": "g23_S13_t00",
+      "gloss": "SISTER",
+      "label_id": 23
+    },
+    {
+      "clip_id": "g23_S13_t01",
+      "gloss": "SISTER",
+      "label_id": 23
+    },
+    {
+      "clip_id": "g23_S14_t00",
+      "gloss": "SISTER",
+      "label_id": 23
+    },
+    {
+      "clip_id": "g24_S12_t00",
+      "gloss": "HOME",
+      "label_id": 24
+    },
+    {
+      "clip_id": "g24_S12_t01",
+      "gloss": "HOME",
+      "label_id": 24
+    },
+    {
+      "clip_id": "g24_S13_t00",
+      "gloss": "HOME",
+      "label_id": 24
+    },
+    {
+      "clip_id": "g24_S13_t01",
+      "gloss": "HOME",
+      "label_id": 24
+    },
+    {
+      "clip_id": "g24_S14_t00",
+      "gloss": "HOME",
+      "label_id": 24
+    },
+    {
+      "clip_id": "g25_S12_t00",
+      "gloss": "SCHOOL",
+      "label_id": 25
+    },
+    {
+      "clip_id": "g25_S12_t01",
+      "gloss": "SCHOOL",
+      "label_id": 25
+    },
+    {
+      "clip_id": "g25_S13_t00",
+      "gloss": "SCHOOL",
+      "label_id": 25
+    },
+    {
+      "clip_id": "g25_S13_t02",
+      "gloss": "SCHOOL",
+      "label_id": 25
+    },
+    {
+      "clip_id": "g25_S14_t00",
+      "gloss": "SCHOOL",
+      "label_id": 25
+    },
+    {
+      "clip_id": "g26_S12_t00",
+      "gloss": "WORK",
+      "label_id": 26
+    },
+    {
+      "clip_id": "g26_S12_t01",
+      "gloss": "WORK",
+      "label_id": 26
+    },
+    {
+      "clip_id": "g26_S13_t00",
+      "gloss": "WORK",
+      "label_id": 26
+    },
+    {
+      "clip_id": "g26_S13_t01",
+      "gloss": "WORK",
+      "label_id": 26
+    },
+    {
+      "clip_id": "g26_S14_t00",
+      "gloss": "WORK",
+      "label_id": 26
+    },
+    {
+      "clip_id": "g27_S12_t00",
+      "gloss": "PLAY",
+      "label_id": 27
+    },
+    {
+      "clip_id": "g27_S12_t01",
+      "gloss": "PLAY",
+      "label_id": 27
+    },
+    {
+      "clip_id": "g27_S13_t00",
+      "gloss": "PLAY",
+      "label_id": 27
+    },
+    {
+      "clip_id": "g27_S13_t02",
+      "gloss": "PLAY",
+      "label_id": 27
+    },
+    {
+      "clip_id": "g27_S14_t00",
+      "gloss": "PLAY",
+      "label_id": 27
+    },
+    {
+      "clip_id": "g28_S12_t00",
+      "gloss": "READ",
+      "label_id": 28
+    },
+    {
+      "clip_id": "g28_S12_t01",
+      "gloss": "READ",
+      "label_id": 28
+    },
+    {
+      "clip_id": "g28_S13_t00",
+      "gloss": "READ",
+      "label_id": 28
+    },
+    {
+      "clip_id": "g28_S13_t01",
+      "gloss": "READ",
+      "label_id": 28
+    },
+    {
+      "clip_id": "g28_S14_t00",
+      "gloss": "READ",
+      "label_id": 28
+    },
+    {
+      "clip_id": "g29_S12_t00",
+      "gloss": "WRITE",
+      "label_id": 29
+    },
+    {
+      "clip_id": "g29_S12_t01",
+      "gloss": "WRITE",
+      "label_id": 29
+    },
+    {
+      "clip_id": "g29_S13_t00",
+      "gloss": "WRITE",
+      "label_id": 29
+    },
+    {
+      "clip_id": "g29_S13_t01",
+      "gloss": "WRITE",
+      "label_id": 29
+    },
+    {
+      "clip_id": "g29_S14_t00",
+      "gloss": "WRITE",
+      "label_id": 29
+    },
+    {
+      "clip_id": "g30_S12_t00",
+      "gloss": "TALK",
+      "label_id": 30
+    },
+    {
+      "clip_id": "g30_S12_t01",
+      "gloss": "TALK",
+      "label_id": 30
+    },
+    {
+      "clip_id": "g30_S13_t00",
+      "gloss": "TALK",
+      "label_id": 30
+    },
+    {
+      "clip_id": "g30_S13_t01",
+      "gloss": "TALK",
+      "label_id": 30
+    },
+    {
+      "clip_id": "g30_S14_t00",
+      "gloss": "TALK",
+      "label_id": 30
+    },
+    {
+      "clip_id": "g31_S12_t00",
+      "gloss": "SEE",
+      "label_id": 31
+    },
+    {
+      "clip_id": "g31_S12_t01",
+      "gloss": "SEE",
+      "label_id": 31
+    },
+    {
+      "clip_id": "g31_S13_t00",
+      "gloss": "SEE",
+      "label_id": 31
+    },
+    {
+      "clip_id": "g31_S13_t01",
+      "gloss": "SEE",
+      "label_id": 31
+    },
+    {
+      "clip_id": "g31_S14_t00",
+      "gloss": "SEE",
+      "label_id": 31
+    },
+    {
+      "clip_id": "g32_S12_t00",
+      "gloss": "LOOK",
+      "label_id": 32
+    },
+    {
+      "clip_id": "g32_S12_t01",
+      "gloss": "LOOK",
+      "label_id": 32
+    },
+    {
+      "clip_id": "g32_S13_t00",
+      "gloss": "LOOK",
+      "label_id": 32
+    },
+    {
+      "clip_id": "g32_S13_t01",
+      "gloss": "LOOK",
+      "label_id": 32
+    },
+    {
+      "clip_id": "g32_S14_t00",
+      "gloss": "LOOK",
+      "label_id": 32
+    },
+    {
+      "clip_id": "g33_S12_t00",
+      "gloss": "WAIT",
+      "label_id": 33
+    },
+    {
+      "clip_id": "g33_S12_t01",
+      "gloss": "WAIT",
+      "label_id": 33
+    },
+    {
+      "clip_id": "g33_S13_t00",
+      "gloss": "WAIT",
+      "label_id": 33
+    },
+    {
+      "clip_id": "g33_S13_t01",
+      "gloss": "WAIT",
+      "label_id": 33
+    },
+    {
+      "clip_id": "g33_S14_t00",
+      "gloss": "WAIT",
+      "label_id": 33
+    },
+    {
+      "clip_id": "g34_S12_t00",
+      "gloss": "STOP",
+      "label_id": 34
+    },
+    {
+      "clip_id": "g34_S12_t01",
+      "gloss": "STOP",
+      "label_id": 34
+    },
+    {
+      "clip_id": "g34_S13_t00",
+      "gloss": "STOP",
+      "label_id": 34
+    },
+    {
+      "clip_id": "g34_S13_t01",
+      "gloss": "STOP",
+      "label_id": 34
+    },
+    {
+      "clip_id": "g34_S14_t00",
+      "gloss": "STOP",
+      "label_id": 34
+    },
+    {
+      "clip_id": "g35_S12_t00",
+      "gloss": "AGAIN",
+      "label_id": 35
+    },
+    {
+      "clip_id": "g35_S12_t01",
+      "gloss": "AGAIN",
+      "label_id": 35
+    },
+    {
+      "clip_id": "g35_S13_t00",
+      "gloss": "AGAIN",
+      "label_id": 35
+    },
+    {
+      "clip_id": "g35_S13_t01",
+      "gloss": "AGAIN",
+      "label_id": 35
+    },
+    {
+      "clip_id": "g35_S14_t00",
+      "gloss": "AGAIN",
+      "label_id": 35
+    },
+    {
+      "clip_id": "g36_S12_t00",
+      "gloss": "UNDERSTAND",
+      "label_id": 36
+    },
+    {
+      "clip_id": "g36_S12_t01",
+      "gloss": "UNDERSTAND",
+      "label_id": 36
+    },
+    {
+      "clip_id": "g36_S13_t00",
+      "gloss": "UNDERSTAND",
+      "label_id": 36
+    },
+    {
+      "clip_id": "g36_S13_t01",
+      "gloss": "UNDERSTAND",
+      "label_id": 36
+    },
+    {
+      "clip_id": "g36_S14_t00",
+      "gloss": "UNDERSTAND",
+      "label_id": 36
+    },
+    {
+      "clip_id": "g37_S12_t00",
+      "gloss": "KNOW",
+      "label_id": 37
+    },
+    {
+      "clip_id": "g37_S12_t01",
+      "gloss": "KNOW",
+      "label_id": 37
+    },
+    {
+      "clip_id": "g37_S13_t00",
+      "gloss": "KNOW",
+      "label_id": 37
+    },
+    {
+      "clip_id": "g37_S13_t01",
+      "gloss": "KNOW",
+      "label_id": 37
+    },
+    {
+      "clip_id": "g37_S14_t00",
+      "gloss": "KNOW",
+      "label_id": 37
+    },
+    {
+      "clip_id": "g38_S12_t00",
+      "gloss": "THINK",
+      "label_id": 38
+    },
+    {
+      "clip_id": "g38_S12_t01",
+      "gloss": "THINK",
+      "label_id": 38
+    },
+    {
+      "clip_id": "g38_S13_t00",
+      "gloss": "FEEL",
+      "label_id": 39
+    },
+    {
+      "clip_id": "g38_S13_t01",
+      "gloss": "THINK",
+      "label_id": 38
+    },
+    {
+      "clip_id": "g38_S13_t02",
+      "gloss": "FEEL",
+      "label_id": 39
+    },
+    {
+      "clip_id": "g38_S13_t03",
+      "gloss": "THINK",
+      "label_id": 38
+    },
+    {
+      "clip_id": "g38_S14_t00",
+      "gloss": "THINK",
+      "label_id": 38
+    },
+    {
+      "clip_id": "g39_S12_t00",
+      "gloss": "FEEL",
+      "label_id": 39
+    },
+    {
+      "clip_id": "g39_S12_t01",
+      "gloss": "FEEL",
+      "label_id": 39
+    },
+    {
+      "clip_id": "g39_S14_t00",
+      "gloss": "FEEL",
+      "label_id": 39
+    },
+    {
+      "clip_id": "g40_S12_t00",
+      "gloss": "HAPPY",
+      "label_id": 40
+    },
+    {
+      "clip_id": "g40_S12_t01",
+      "gloss": "HAPPY",
+      "label_id": 40
+    },
+    {
+      "clip_id": "g40_S13_t00",
+      "gloss": "HAPPY",
+      "label_id": 40
+    },
+    {
+      "clip_id": "g40_S13_t01",
+      "gloss": "HAPPY",
+      "label_id": 40
+    },
+    {
+      "clip_id": "g40_S14_t00",
+      "gloss": "HAPPY",
+      "label_id": 40
+    },
+    {
+      "clip_id": "g41_S12_t00",
+      "gloss": "SAD",
+      "label_id": 41
+    },
+    {
+      "clip_id": "g41_S12_t01",
+      "gloss": "SAD",
+      "label_id": 41
+    },
+    {
+      "clip_id": "g41_S13_t00",
+      "gloss": "SAD",
+      "label_id": 41
+    },
+    {
+      "clip_id": "g41_S13_t03",
+      "gloss": "SAD",
+      "label_id": 41
+    },
+    {
+      "clip_id": "g41_S14_t00",
+      "gloss": "SAD",
+      "label_id": 41
+    },
+    {
+      "clip_id": "g42_S12_t00",
+      "gloss": "ANGRY",
+      "label_id": 42
+    },
+    {
+      "clip_id": "g42_S12_t01",
+      "gloss": "ANGRY",
+      "label_id": 42
+    },
+    {
+      "clip_id": "g42_S13_t00",
+      "gloss": "ANGRY",
+      "label_id": 42
+    },
+    {
+      "clip_id": "g42_S13_t01",
+      "gloss": "ANGRY",
+      "label_id": 42
+    },
+    {
+      "clip_id": "g42_S14_t00",
+      "gloss": "ANGRY",
+      "label_id": 42
+    },
+    {
+      "clip_id": "g43_S12_t00",
+      "gloss": "LOVE",
+      "label_id": 43
+    },
+    {
+      "clip_id": "g43_S12_t01",
+      "gloss": "LOVE",
+      "label_id": 43
+    },
+    {
+      "clip_id": "g43_S13_t00",
+      "gloss": "LOVE",
+      "label_id": 43
+    },
+    {
+      "clip_id": "g43_S13_t01",
+      "gloss": "LOVE",
+      "label_id": 43
+    },
+    {
+      "clip_id": "g43_S14_t00",
+      "gloss": "LOVE",
+      "label_id": 43
+    },
+    {
+      "clip_id": "g44_S12_t00",
+      "gloss": "LIKE",
+      "label_id": 44
+    },
+    {
+      "clip_id": "g44_S12_t01",
+      "gloss": "LIKE",
+      "label_id": 44
+    },
+    {
+      "clip_id": "g44_S13_t00",
+      "gloss": "LIKE",
+      "label_id": 44
+    },
+    {
+      "clip_id": "g44_S13_t02",
+      "gloss": "LIKE",
+      "label_id": 44
+    },
+    {
+      "clip_id": "g44_S14_t00",
+      "gloss": "LIKE",
+      "label_id": 44
+    },
+    {
+      "clip_id": "g45_S12_t00",
+      "gloss": "GOOD",
+      "label_id": 45
+    },
+    {
+      "clip_id": "g45_S12_t01",
+      "gloss": "GOOD",
+      "label_id": 45
+    },
+    {
+      "clip_id": "g45_S13_t00",
+      "gloss": "GOOD",
+      "label_id": 45
+    },
+    {
+      "clip_id": "g45_S13_t01",
+      "gloss": "GOOD",
+      "label_id": 45
+    },
+    {
+      "clip_id": "g45_S14_t00",
+      "gloss": "GOOD",
+      "label_id": 45
+    },
+    {
+      "clip_id": "g46_S12_t00",
+      "gloss": "BAD",
+      "label_id": 46
+    },
+    {
+      "clip_id": "g46_S12_t01",
+      "gloss": "BAD",
+      "label_id": 46
+    },
+    {
+      "clip_id": "g46_S13_t00",
+      "gloss": "BAD",
+      "label_id": 46
+    },
+    {
+      "clip_id": "g46_S13_t01",
+      "gloss": "BAD",
+      "label_id": 46
+    },
+    {
+      "clip_id": "g46_S14_t00",
+      "gloss": "BAD",
+      "label_id": 46
+    },
+    {
+      "clip_id": "g47_S12_t00",
+      "gloss": "BIG",
+      "label_id": 47
+    },
+    {
+      "clip_id": "g47_S12_t01",
+      "gloss": "BIG",
+      "label_id": 47
+    },
+    {
+      "clip_id": "g47_S13_t00",
+      "gloss": "BIG",
+      "label_id": 47
+    },
+    {
+      "clip_id": "g47_S13_t01",
+      "gloss": "BIG",
+      "label_id": 47
+    },
+    {
+      "clip_id": "g47_S14_t00",
+      "gloss": "BIG",
+      "label_id": 47
+    },
+    {
+      "clip_id": "g48_S12_t00",
+      "gloss": "SMALL",
+      "label_id": 48
+    },
+    {
+      "clip_id": "g48_S12_t01",
+      "gloss": "SMALL",
+      "label_id": 48
+    },
+    {
+      "clip_id": "g48_S13_t00",
+      "gloss": "SMALL",
+      "label_id": 48
+    },
+    {
+      "clip_id": "g48_S13_t01",
+      "gloss": "SMALL",
+      "label_id": 48
+    },
+    {
+      "clip_id": "g48_S14_t00",
+      "gloss": "SMALL",
+      "label_id": 48
+    },
+    {
+      "clip_id": "g49_S12_t00",
+      "gloss": "HOT",
+      "label_id": 49
+    },
+    {
+      "clip_id": "g49_S12_t01",
+      "gloss": "HOT",
+      "label_id": 49
+    },
+    {
+      "clip_id": "g49_S13_t02",
+      "gloss": "HOT",
+      "label_id": 49
+    },
+    {
+      "clip_id": "g49_S13_t03",
+      "gloss": "HOT",
+      "label_id": 49
+    },
+    {
+      "clip_id": "g49_S14_t00",
+      "gloss": "HOT",
+      "label_id": 49
+    },
+    {
+      "clip_id": "g50_S12_t00",
+      "gloss": "COLD",
+      "label_id": 50
+    },
+    {
+      "clip_id": "g50_S12_t01",
+      "gloss": "COLD",
+      "label_id": 50
+    },
+    {
+      "clip_id": "g50_S13_t00",
+      "gloss": "COLD",
+      "label_id": 50
+    },
+    {
+      "clip_id": "g50_S13_t01",
+      "gloss": "COLD",
+      "label_id": 50
+    },
+    {
+      "clip_id": "g50_S14_t00",
+      "gloss": "COLD",
+      "label_id": 50
+    },
+    {
+      "clip_id": "g51_S12_t01",
+      "gloss": "DAY",
+      "label_id": 51
+    },
+    {
+      "clip_id": "g51_S12_t02",
+      "gloss": "DAY",
+      "label_id": 51
+    },
+    {
+      "clip_id": "g51_S13_t00",
+      "gloss": "DAY",
+      "label_id": 51
+    },
+    {
+      "clip_id": "g51_S13_t01",
+      "gloss": "DAY",
+      "label_id": 51
+    },
+    {
+      "clip_id": "g51_S14_t00",
+      "gloss": "DAY",
+      "label_id": 51
+    },
+    {
+      "clip_id": "g52_S12_t00",
+      "gloss": "NIGHT",
+      "label_id": 52
+    },
+    {
+      "clip_id": "g52_S12_t01",
+      "gloss": "NIGHT",
+      "label_id": 52
+    },
+    {
+      "clip_id": "g52_S13_t00",
+      "gloss": "NIGHT",
+      "label_id": 52
+    },
+    {
+      "clip_id": "g52_S13_t01",
+      "gloss": "NIGHT",
+      "label_id": 52
+    },
+    {
+      "clip_id": "g52_S14_t00",
+      "gloss": "NIGHT",
+      "label_id": 52
+    },
+    {
+      "clip_id": "g53_S12_t00",
+      "gloss": "TIME",
+      "label_id": 53
+    },
+    {
+      "clip_id": "g53_S12_t01",
+      "gloss": "TIME",
+      "label_id": 53
+    },
+    {
+      "clip_id": "g53_S13_t00",
+      "gloss": "TIME",
+      "label_id": 53
+    },
+    {
+      "clip_id": "g53_S13_t01",
+      "gloss": "TIME",
+      "label_id": 53
+    },
+    {
+      "clip_id": "g53_S14_t00",
+      "gloss": "TIME",
+      "label_id": 53
+    },
+    {
+      "clip_id": "g54_S12_t00",
+      "gloss": "NOW",
+      "label_id": 54
+    },
+    {
+      "clip_id": "g54_S12_t01",
+      "gloss": "NOW",
+      "label_id": 54
+    },
+    {
+      "clip_id": "g54_S13_t00",
+      "gloss": "NOW",
+      "label_id": 54
+    },
+    {
+      "clip_id": "g54_S13_t01",
+      "gloss": "NOW",
+      "label_id": 54
+    },
+    {
+      "clip_id": "g54_S14_t00",
+      "gloss": "NOW",
+      "label_id": 54
+    },
+    {
+      "clip_id": "g55_S12_t00",
+      "gloss": "LATER",
+      "label_id": 55
+    },
+    {
+      "clip_id": "g55_S12_t01",
+      "gloss": "LATER",
+      "label_id": 55
+    },
+    {
+      "clip_id": "g55_S13_t00",
+      "gloss": "LATER",
+      "label_id": 55
+    },
+    {
+      "clip_id": "g55_S13_t01",
+      "gloss": "LATER",
+      "label_id": 55
+    },
+    {
+      "clip_id": "g55_S14_t00",
+      "gloss": "LATER",
+      "label_id": 55
+    },
+    {
+      "clip_id": "g56_S12_t00",
+      "gloss": "MORNING",
+      "label_id": 56
+    },
+    {
+      "clip_id": "g56_S12_t01",
+      "gloss": "MORNING",
+      "label_id": 56
+    },
+    {
+      "clip_id": "g56_S13_t01",
+      "gloss": "MORNING",
+      "label_id": 56
+    },
+    {
+      "clip_id": "g56_S13_t02",
+      "gloss": "MORNING",
+      "label_id": 56
+    },
+    {
+      "clip_id": "g56_S14_t00",
+      "gloss": "MORNING",
+      "label_id": 56
+    },
+    {
+      "clip_id": "g57_S12_t00",
+      "gloss": "EVENING",
+      "label_id": 57
+    },
+    {
+      "clip_id": "g57_S12_t01",
+      "gloss": "EVENING",
+      "label_id": 57
+    },
+    {
+      "clip_id": "g57_S13_t00",
+      "gloss": "EVENING",
+      "label_id": 57
+    },
+    {
+      "clip_id": "g57_S13_t02",
+      "gloss": "EVENING",
+      "label_id": 57
+    },
+    {
+      "clip_id": "g57_S14_t00",
+      "gloss": "EVENING",
+      "label_id": 57
+    },
+    {
+      "clip_id": "g58_S12_t00",
+      "gloss": "WHERE",
+      "label_id": 58
+    },
+    {
+      "clip_id": "g58_S12_t01",
+      "gloss": "WHERE",
+      "label_id": 58
+    },
+    {
+      "clip_id": "g58_S13_t00",
+      "gloss": "WHERE",
+      "label_id": 58
+    },
+    {
+      "clip_id": "g58_S13_t02",
+      "gloss": "WHERE",
+      "label_id": 58
+    },
+    {
+      "clip_id": "g58_S14_t00",
+      "gloss": "WHERE",
+      "label_id": 58
+    },
+    {
+      "clip_id": "g59_S12_t00",
+      "gloss": "WHO",
+      "label_id": 59
+    },
+    {
+      "clip_id": "g59_S12_t01",
+      "gloss": "WHO",
+      "label_id": 59
+    },
+    {
+      "clip_id": "g59_S13_t00",
+      "gloss": "WHO",
+      "label_id": 59
+    },
+    {
+      "clip_id": "g59_S13_t01",
+      "gloss": "WHO",
+      "label_id": 59
+    },
+    {
+      "clip_id": "g59_S14_t00",
+      "gloss": "WHO",
+      "label_id": 59
+    }
+  ],
+  "content_hash": "a16960a9a9efbc39f2898a2b17fe9df60b1e72dfa7a242590012edbcde41332f",
+  "gloss_distribution": {
+    "AGAIN": 5,
+    "ANGRY": 5,
+    "BAD": 5,
+    "BIG": 5,
+    "BROTHER": 5,
+    "COLD": 5,
+    "COME": 5,
+    "DAY": 5,
+    "DRINK": 5,
+    "EAT": 5,
+    "EVENING": 5,
+    "FAMILY": 5,
+    "FATHER": 5,
+    "FEEL": 5,
+    "FINISH": 5,
+    "FRIEND": 5,
+    "GO": 5,
+    "GOOD": 5,
+    "HAPPY": 5,
+    "HELLO": 5,
+    "HELP": 5,
+    "HOME": 5,
+    "HOT": 5,
+    "KNOW": 5,
+    "LATER": 5,
+    "LEARN": 5,
+    "LIKE": 5,
+    "LOOK": 5,
+    "LOVE": 5,
+    "MORE": 5,
+    "MORNING": 5,
+    "MOTHER": 5,
+    "NAME": 5,
+    "NEED": 5,
+    "NIGHT": 5,
+    "NO": 5,
+    "NOW": 5,
+    "PLAY": 5,
+    "PLEASE": 5,
+    "READ": 5,
+    "SAD": 5,
+    "SCHOOL": 5,
+    "SEE": 5,
+    "SISTER": 5,
+    "SMALL": 5,
+    "SORRY": 5,
+    "STOP": 5,
+    "TALK": 5,
+    "THANK-YOU": 5,
+    "THINK": 5,
+    "TIME": 5,
+    "UNDERSTAND": 5,
+    "WAIT": 5,
+    "WANT": 5,
+    "WATER": 5,
+    "WHERE": 5,
+    "WHO": 5,
+    "WORK": 5,
+    "WRITE": 5,
+    "YES": 5
+  },
+  "n_clips": 300,
+  "quality_tier_distribution": {
+    "HIGH": 180,
+    "LOW": 120
+  },
+  "schema": "signstream-gold-v1",
+  "signer_distribution": {
+    "S12": 120,
+    "S13": 119,
+    "S14": 61
+  },
+  "split": "signer_holdout"
+}
