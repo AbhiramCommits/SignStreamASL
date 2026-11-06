@@ -24,6 +24,78 @@ def _stub(command: str):
     return run
 
 
+def _cmd_build_data(args: argparse.Namespace) -> int:
+    import json
+    from pathlib import Path
+
+    from signstream.config import data_config
+    from signstream.data.corpus import generate_corpus, save_corpus
+    from signstream.data.curate import curate_all
+    from signstream.data.dataset import load_records
+    from signstream.data.manifest import write_manifest
+    from signstream.data.splits import coverage_stats, write_split_files
+
+    config = data_config(args.config)
+    if args.coverage_only:
+        records = load_records(config)
+        curation_path = Path(config.data_dir) / "curation_report.json"
+        if curation_path.exists():
+            kept = set(json.loads(curation_path.read_text(encoding="utf-8")).get("kept_ids", []))
+            records = [record for record in records if record["clip_id"] in kept]
+        summary = coverage_stats(records, reports_dir=config.reports_dir)
+        print(summary["markdown"])
+        return 0
+
+    quick = bool(args.quick or config.quick)
+    clips, records = generate_corpus(config, quick=quick)
+    save_corpus(clips, records, config, write_individual=not quick)
+    curation = curate_all(clips, records, config)
+    splits = write_split_files(curation.kept_records, config)
+    manifest = write_manifest(
+        config.manifest_version,
+        config,
+        curation.kept_records,
+        curation.report,
+        splits,
+    )
+    coverage = coverage_stats(curation.kept_records, reports_dir=config.reports_dir)
+    summary = {
+        "clips_generated": len(records),
+        "clips_kept": len(curation.kept_records),
+        "counts_by_reason": curation.report["counts_by_reason"],
+        "label_audit": {
+            key: curation.report["label_audit"][key]
+            for key in ("precision", "recall", "n_flagged", "injected_total", "true_positives")
+        },
+        "manifest_hash": manifest["dataset_manifest_hash"],
+        "coverage": coverage["clips_per_gloss"],
+        "splits": {
+            name: {key: len(payload[key]) for key in ("train", "val", "test")}
+            for name, payload in splits.items()
+        },
+        "quick": quick,
+    }
+    print(json.dumps(summary, indent=2, sort_keys=True))
+    return 0
+
+
+def _cmd_extract_keypoints(args: argparse.Namespace) -> int:
+    import json
+
+    from signstream.data.keypoints import (
+        MissingDependencyError,
+        extract_keypoints_directory,
+    )
+
+    try:
+        log = extract_keypoints_directory(args.videos_dir, args.out)
+    except MissingDependencyError as exc:
+        print(f"Capture dependencies unavailable: {exc}", file=sys.stderr)
+        return 2
+    print(json.dumps({key: log[key] for key in ("count", "ok", "failed")}, indent=2))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Build the complete CLI parser with all pipeline stages."""
     parser = argparse.ArgumentParser(
@@ -38,7 +110,7 @@ def build_parser() -> argparse.ArgumentParser:
     build_data.add_argument("--config", default="configs/data.yaml")
     build_data.add_argument("--coverage-only", action="store_true")
     build_data.add_argument("--quick", action="store_true", help="Generate a small CI data slice")
-    build_data.set_defaults(func=_stub("build-data"))
+    build_data.set_defaults(func=_cmd_build_data)
 
     extract = subparsers.add_parser(
         "extract-keypoints", help="Extract 61-landmark sequences from video files"
@@ -46,7 +118,7 @@ def build_parser() -> argparse.ArgumentParser:
     extract.add_argument("--videos-dir", required=True)
     extract.add_argument("--out", default="artifacts/data/keypoints")
     extract.add_argument("--config", default="configs/data.yaml")
-    extract.set_defaults(func=_stub("extract-keypoints"))
+    extract.set_defaults(func=_cmd_extract_keypoints)
 
     train = subparsers.add_parser("train", help="Train a temporal recognizer")
     train.add_argument("--config", default="configs/model.yaml")

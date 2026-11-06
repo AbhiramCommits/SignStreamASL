@@ -18,7 +18,7 @@ low_quality_noise_multiplier: 3.0
 frame_dropout_rate: 0.15
 hand_loss_rate: 0.04
 dedupe_cosine_threshold: 0.995
-curation_top_fraction: 0.02
+curation_top_fraction: 0.03
 min_valid_frames: 12
 max_nan_fraction: 0.40
 random_train: 0.70
