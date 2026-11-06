@@ -96,6 +96,49 @@ def _cmd_extract_keypoints(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_train(args: argparse.Namespace) -> int:
+    import json
+
+    from signstream.train import prepare_model_config, train_model
+
+    config = prepare_model_config(args.config, epochs=args.epochs, seed=args.seed)
+    report = train_model(
+        config,
+        model_name=args.model,
+        split=args.split,
+        epochs=args.epochs,
+        seed=args.seed,
+    )
+    print(
+        json.dumps(
+            {
+                "model": report["model"],
+                "split": report["split"],
+                "checkpoint": report["checkpoint"],
+                "parameters": report["parameters"],
+                "best_epoch": report["best_epoch"],
+                "best_val": report["best_val"],
+                "train_examples": report["train_examples"],
+                "run_id": report["run_id"],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _cmd_label_budget(args: argparse.Namespace) -> int:
+    import json
+
+    from signstream.train import prepare_model_config, run_label_budget
+
+    config = prepare_model_config(args.config)
+    payload = run_label_budget(config)
+    print(json.dumps(payload, indent=2, sort_keys=True))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Build the complete CLI parser with all pipeline stages."""
     parser = argparse.ArgumentParser(
@@ -128,7 +171,7 @@ def build_parser() -> argparse.ArgumentParser:
     train.add_argument("--split", default="signer_holdout", choices=["random", "signer_holdout"])
     train.add_argument("--epochs", type=int, default=None, help="Override configured epochs")
     train.add_argument("--seed", type=int, default=None)
-    train.set_defaults(func=_stub("train"))
+    train.set_defaults(func=_cmd_train)
 
     evaluate = subparsers.add_parser("evaluate", help="Evaluate a checkpoint with fairness analysis")
     evaluate.add_argument("--checkpoint", required=True)
@@ -139,7 +182,7 @@ def build_parser() -> argparse.ArgumentParser:
     label_budget = subparsers.add_parser("label-budget", help="Measure test accuracy vs label budget")
     label_budget.add_argument("--model", default="pose_transformer")
     label_budget.add_argument("--config", default="configs/model.yaml")
-    label_budget.set_defaults(func=_stub("label-budget"))
+    label_budget.set_defaults(func=_cmd_label_budget)
 
     decode = subparsers.add_parser("decode", help="Decode continuous signing into gloss events")
     decode.add_argument("--input", default="artifacts/data/continuous/")

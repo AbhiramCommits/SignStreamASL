@@ -9,7 +9,7 @@ num_layers: 4
 ffn_dim: 256
 dropout: 0.1
 batch_size: 256
-epochs: 12
+epochs: 20
 learning_rate: 0.001
 weight_decay: 0.01
 label_smoothing: 0.05
@@ -23,5 +23,5 @@ reports_dir: artifacts/reports
 runs_dir: artifacts/runs
 mlflow_uri: mlruns
 label_budget_fractions: [0.05, 0.10, 0.25, 0.50, 1.00]
-label_budget_epochs: [5, 5, 5, 5, 6]
+label_budget_epochs: [4, 4, 4, 4, 5]
 label_budget_seed: 11

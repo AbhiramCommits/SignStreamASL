@@ -1,0 +1,29 @@
+{
+  "best_epoch": 1,
+  "best_val": {
+    "loss": 4.833938121795654,
+    "n": 675.0,
+    "top1": 0.44,
+    "top5": 0.7244444444444444
+  },
+  "checkpoint": "artifacts/checkpoints/linear_probe_signer_holdout.pt",
+  "epochs": 20,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 4.833938121795654,
+      "n": 675.0,
+      "top1": 0.44,
+      "top5": 0.7244444444444444
+    }
+  ],
+  "manifest_hash": "af1b378a9531b50d5e83ef489532ad684ee896a83248afa99c86c9941d15224b",
+  "model": "linear_probe",
+  "parameters": 25620,
+  "run_id": "20261105T203141_linear_probe_signer_holdout_d56d88",
+  "seed": 7,
+  "split": "signer_holdout",
+  "train_examples": 3047,
+  "train_fraction": 1.0,
+  "val_examples": 675
+}
