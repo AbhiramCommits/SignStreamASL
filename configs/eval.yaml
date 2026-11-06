@@ -1,0 +1,17 @@
+# Evaluation, fairness, continuous decoding, and serving configuration.
+seed: 99
+batch_size: 256
+gold_size: 300
+n_bins: 10
+top_k: 5
+window: 48
+stride: 8
+ema_windows: 3
+min_duration_s: 0.35
+cooldown_s: 0.35
+fps: 30
+confidence_threshold: 0.60
+threshold_sweep: [0.3, 0.5, 0.6, 0.7, 0.8]
+reports_dir: artifacts/reports
+gold_path: eval/gold_set.json
+parquet_index: false

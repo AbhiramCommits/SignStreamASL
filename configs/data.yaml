@@ -1,0 +1,45 @@
+# Data generation, curation, and manifest configuration.
+seed: 42
+seq_len: 48
+clip_frames: 48
+landmark_count: 61
+feature_dim: 183
+num_glosses: 60
+num_signers: 14
+takes_per_pair: 6
+low_quality_signers: ["S11", "S12"]
+left_dominant_signers: ["S04", "S13"]
+duplicate_rate: 0.02
+mislabel_rate: 0.015
+truncation_rate: 0.01
+tracking_failure_rate: 0.005
+duplicate_noise: 0.0015
+low_quality_noise_multiplier: 3.0
+frame_dropout_rate: 0.15
+hand_loss_rate: 0.04
+dedupe_cosine_threshold: 0.995
+curation_top_fraction: 0.02
+min_valid_frames: 12
+max_nan_fraction: 0.40
+random_train: 0.70
+random_val: 0.15
+random_test: 0.15
+test_signers: ["S12", "S13", "S14"]
+val_signers: ["S11", "S10"]
+splits: ["random", "signer_holdout"]
+manifest_version: v1
+schema_version: asl61-v1
+data_dir: artifacts/data
+clips_dir: artifacts/data/clips
+keypoints_dir: artifacts/data/keypoints
+continuous_dir: artifacts/data/continuous
+reports_dir: artifacts/reports
+continuous_sentences: 150
+continuous_min_signs: 4
+continuous_max_signs: 8
+continuous_fps: 30
+continuous_rest_frames: 12
+quick: false
+quick_glosses: 8
+quick_signers: 5
+quick_takes: 2

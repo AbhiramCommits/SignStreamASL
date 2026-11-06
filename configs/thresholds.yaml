@@ -1,0 +1,14 @@
+# Gold-set regression gate. Baselines are populated from a real evaluation run.
+gold:
+  checkpoint: artifacts/checkpoints/pose_transformer_signer_holdout.pt
+  split: signer_holdout
+  baseline:
+    top1: 0.0
+    top5: 0.0
+    macro_f1: 0.0
+    max_fairness_gap: 1.0
+  tolerance:
+    top1_absolute: 0.02
+    top5_absolute: 0.02
+    macro_f1_absolute: 0.02
+    max_fairness_gap_absolute: 0.05

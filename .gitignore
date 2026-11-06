@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Generated data and large model artifacts
+artifacts/checkpoints/
+artifacts/data/
+artifacts/runs/
+artifacts/onnx/
+mlruns/
+*.onnx
+*.pt
+*.npz
+*.npy
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
