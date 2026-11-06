@@ -294,33 +294,11 @@ def _cmd_regress(args: argparse.Namespace) -> int:
         "macro_f1": float(gold_metrics["macro_f1"]),
         "max_fairness_gap": fairness_gap,
     }
-    baseline = gold_cfg.get("baseline", {})
-    tolerance = gold_cfg.get("tolerance", {})
-    checks: list[dict[str, object]] = []
-    failures: list[str] = []
-    directions = {
-        "top1": "min",
-        "top5": "min",
-        "macro_f1": "min",
-        "max_fairness_gap": "max",
-    }
-    for key, direction in directions.items():
-        expected = float(baseline.get(key, 0.0))
-        tol = float(tolerance.get(f"{key}_absolute", 0.02))
-        value = actual[key]
-        passed = value >= expected - tol if direction == "min" else value <= expected + tol
-        if not passed:
-            failures.append(key)
-        checks.append(
-            {
-                "metric": key,
-                "actual": value,
-                "baseline": expected,
-                "tolerance": tol,
-                "direction": direction,
-                "passed": bool(passed),
-            }
-        )
+    from signstream.eval.regression import evaluate_gate, gate_table
+
+    checks, failures = evaluate_gate(
+        actual, gold_cfg.get("baseline", {}), gold_cfg.get("tolerance", {})
+    )
     payload = {
         "checkpoint": str(checkpoint),
         "gold_metrics": gold_metrics,
@@ -334,14 +312,7 @@ def _cmd_regress(args: argparse.Namespace) -> int:
     (reports / "regression.json").write_text(
         json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8"
     )
-    print("| Metric | Actual | Baseline | Tolerance | Direction | Status |")
-    print("|---|---:|---:|---:|---|---|")
-    for check in checks:
-        print(
-            f"| {check['metric']} | {check['actual']:.4f} | {check['baseline']:.4f} | "
-            f"{check['tolerance']:.4f} | {check['direction']} | "
-            f"{'PASS' if check['passed'] else 'FAIL'} |"
-        )
+    print(gate_table(checks))
     if failures:
         print(f"Regression gate failed: {', '.join(failures)}", file=sys.stderr)
         return 1

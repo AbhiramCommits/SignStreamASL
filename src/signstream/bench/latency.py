@@ -52,6 +52,7 @@ def benchmark_latency(
     batch_sizes: list[int] | None = None,
     warmup: int = 50,
     iterations: int = 300,
+    reports_dir: str | Path | None = None,
 ) -> dict[str, Any]:
     """Benchmark both backends and the streaming window budget."""
     sizes = batch_sizes or [1, 8, 32]
@@ -116,7 +117,7 @@ def benchmark_latency(
             "numpy_version": np.__version__,
         },
     }
-    reports = Path(eval_config().reports_dir)
+    reports = Path(reports_dir) if reports_dir is not None else Path(eval_config().reports_dir)
     reports.mkdir(parents=True, exist_ok=True)
     (reports / "latency.json").write_text(
         json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8"

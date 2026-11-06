@@ -1,5 +1,5 @@
 {
-  "checkpoint": "artifacts/checkpoints/pose_transformer_signer_holdout.pt",
+  "checkpoint": "eval/fixtures/pose_transformer_signer_holdout.pt",
   "class_names": [
     "HELLO",
     "THANK-YOU",

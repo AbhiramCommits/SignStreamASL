@@ -161,7 +161,11 @@ class SlidingWindowDecoder:
         # Non-maximum suppression: overlapping detections compete by confidence.
         kept: list[GlossEvent] = []
         for candidate in sorted(runs, key=lambda event: event.confidence, reverse=True):
-            if all(_temporal_overlap(candidate, existing) <= self.nms_overlap for existing in kept):
+            if all(
+                candidate.gloss_id != existing.gloss_id
+                or _temporal_overlap(candidate, existing) <= self.nms_overlap
+                for existing in kept
+            ):
                 kept.append(candidate)
         kept.sort(key=lambda event: event.start_s)
 

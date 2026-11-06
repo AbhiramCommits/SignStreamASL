@@ -447,6 +447,7 @@ def curate_all(
     }
     reports_dir = Path(config.reports_dir)
     reports_dir.mkdir(parents=True, exist_ok=True)
+    Path(config.data_dir).mkdir(parents=True, exist_ok=True)
     (Path(config.data_dir) / "curation_report.json").write_text(
         json.dumps(report, indent=2, sort_keys=True), encoding="utf-8"
     )

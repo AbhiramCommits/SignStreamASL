@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check src tests
+      - name: Test with coverage
+        run: |
+          pytest -q -m "not slow" --cov=src/signstream --cov-report=term-missing --cov-fail-under=80
+
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Rebuild deterministic data
+        run: signstream build-data --config configs/data.yaml
+      - name: Restore frozen checkpoint fixture
+        run: |
+          mkdir -p artifacts/checkpoints
+          cp eval/fixtures/pose_transformer_signer_holdout.pt artifacts/checkpoints/pose_transformer_signer_holdout.pt
+      - name: Gold-set regression gate
+        run: signstream regress --config configs/thresholds.yaml

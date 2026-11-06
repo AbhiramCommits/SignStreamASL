@@ -26,6 +26,7 @@ def export_onnx(
     *,
     n_parity: int = 500,
     max_delta: float = 1e-3,
+    report_path: str | Path | None = None,
 ) -> dict[str, Any]:
     """Export a checkpoint with dynamic batch/sequence axes and check parity."""
     output = Path(output_path)
@@ -104,9 +105,13 @@ def export_onnx(
         "class_count": len(payload.get("class_names", GLOSSES)),
         "manifest_hash": payload.get("manifest_hash"),
     }
-    report_path = Path(eval_cfg.reports_dir) / "onnx_parity.json"
-    report_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")
+    output_report = (
+        Path(report_path)
+        if report_path is not None
+        else Path(eval_cfg.reports_dir) / "onnx_parity.json"
+    )
+    output_report.parent.mkdir(parents=True, exist_ok=True)
+    output_report.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")
     LOGGER.info(
         "ONNX parity: max_delta=%.2e mean_delta=%.2e argmax_agreement=%.4f",
         result["max_abs_logit_delta"],
