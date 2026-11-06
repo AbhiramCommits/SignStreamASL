@@ -5,7 +5,7 @@
     "top1": 0.6666666666666666,
     "top5": 0.9166666666666666
   },
-  "checkpoint": "eval/fixtures/pose_transformer_signer_holdout.pt",
+  "checkpoint": "artifacts/checkpoints/pose_transformer_signer_holdout.pt",
   "checks": [
     {
       "actual": 0.6666666666666666,
@@ -42,7 +42,7 @@
   ],
   "failures": [],
   "gold_metrics": {
-    "checkpoint": "eval/fixtures/pose_transformer_signer_holdout.pt",
+    "checkpoint": "artifacts/checkpoints/pose_transformer_signer_holdout.pt",
     "ece": 0.12858546266953153,
     "gold_content_hash": "a16960a9a9efbc39f2898a2b17fe9df60b1e72dfa7a242590012edbcde41332f",
     "macro_f1": 0.6765252549308276,

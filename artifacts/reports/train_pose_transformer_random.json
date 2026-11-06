@@ -192,7 +192,7 @@
   "manifest_hash": "af1b378a9531b50d5e83ef489532ad684ee896a83248afa99c86c9941d15224b",
   "model": "pose_transformer",
   "parameters": 576554,
-  "run_id": "20261105T202607_pose_transformer_random_f9f53c",
+  "run_id": "20261106T001109_pose_transformer_random_97de56",
   "seed": 7,
   "split": "random",
   "train_examples": 3302,

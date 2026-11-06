@@ -192,7 +192,7 @@
   "manifest_hash": "af1b378a9531b50d5e83ef489532ad684ee896a83248afa99c86c9941d15224b",
   "model": "pose_transformer",
   "parameters": 576554,
-  "run_id": "20261105T202219_pose_transformer_signer_holdout_71c46a",
+  "run_id": "20261106T000623_pose_transformer_signer_holdout_e8309d",
   "seed": 7,
   "split": "signer_holdout",
   "train_examples": 3047,

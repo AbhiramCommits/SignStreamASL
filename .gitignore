@@ -26,3 +26,6 @@ mlruns/
 .DS_Store
 .idea/
 .vscode/
+
+# Local run logs
+artifacts/reports/*.log

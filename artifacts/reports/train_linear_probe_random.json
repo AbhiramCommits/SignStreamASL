@@ -20,7 +20,7 @@
   "manifest_hash": "af1b378a9531b50d5e83ef489532ad684ee896a83248afa99c86c9941d15224b",
   "model": "linear_probe",
   "parameters": 25620,
-  "run_id": "20261105T235405_linear_probe_random_2cfd9e",
+  "run_id": "20261106T001920_linear_probe_random_414104",
   "seed": 7,
   "split": "random",
   "train_examples": 3302,

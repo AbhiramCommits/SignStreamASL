@@ -192,7 +192,7 @@
   "manifest_hash": "af1b378a9531b50d5e83ef489532ad684ee896a83248afa99c86c9941d15224b",
   "model": "bigru",
   "parameters": 568636,
-  "run_id": "20261105T235218_bigru_random_11addb",
+  "run_id": "20261106T001717_bigru_random_d3ea35",
   "seed": 7,
   "split": "random",
   "train_examples": 3302,

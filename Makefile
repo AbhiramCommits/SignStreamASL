@@ -17,12 +17,17 @@ train:
 	$(SIGNSTREAM) train --config $(CONFIG_MODEL) --model pose_transformer --split signer_holdout
 	$(SIGNSTREAM) train --config $(CONFIG_MODEL) --model pose_transformer --split random
 	$(SIGNSTREAM) train --config $(CONFIG_MODEL) --model bigru --split signer_holdout
+	$(SIGNSTREAM) train --config $(CONFIG_MODEL) --model bigru --split random
 	$(SIGNSTREAM) train --config $(CONFIG_MODEL) --model linear_probe --split signer_holdout
+	$(SIGNSTREAM) train --config $(CONFIG_MODEL) --model linear_probe --split random
 
 eval:
 	$(SIGNSTREAM) evaluate --checkpoint $(CKPT) --split signer_holdout --config $(CONFIG_EVAL)
 	$(SIGNSTREAM) evaluate --checkpoint artifacts/checkpoints/pose_transformer_random.pt --split random --config $(CONFIG_EVAL)
 	$(SIGNSTREAM) evaluate --checkpoint artifacts/checkpoints/bigru_signer_holdout.pt --split signer_holdout --config $(CONFIG_EVAL)
+	$(SIGNSTREAM) evaluate --checkpoint artifacts/checkpoints/bigru_random.pt --split random --config $(CONFIG_EVAL)
+	$(SIGNSTREAM) evaluate --checkpoint artifacts/checkpoints/linear_probe_signer_holdout.pt --split signer_holdout --config $(CONFIG_EVAL)
+	$(SIGNSTREAM) evaluate --checkpoint artifacts/checkpoints/linear_probe_random.pt --split random --config $(CONFIG_EVAL)
 
 label-budget:
 	$(SIGNSTREAM) label-budget --model pose_transformer --config $(CONFIG_MODEL)

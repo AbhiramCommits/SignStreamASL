@@ -1,0 +1,17 @@
+.git
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.coverage
+htmlcov
+mlruns
+artifacts/data
+artifacts/checkpoints
+artifacts/onnx
+artifacts/runs
+tests
+build
+*.egg-info
+.DS_Store
