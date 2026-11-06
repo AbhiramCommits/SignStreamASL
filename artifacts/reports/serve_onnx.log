@@ -1,0 +1,13 @@
+INFO:     Started server process [71017]
+INFO:     Waiting for application startup.
+2026-11-05T23:57:16 | INFO     | signstream.serve.app | Inference service ready with onnx backend
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8012 (Press CTRL+C to quit)
+2026-11-05T23:57:17 | INFO     | signstream.serve.app | request_id=a8b55b7c908e method=GET path=/health status=200 duration_ms=0.82
+INFO:     127.0.0.1:60967 - "GET /health HTTP/1.1" 200 OK
+2026-11-05T23:57:17 | INFO     | signstream.serve.app | request_id=fe4425dc79d2 method=POST path=/predict status=200 duration_ms=75.28
+INFO:     127.0.0.1:60968 - "POST /predict HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [71017]

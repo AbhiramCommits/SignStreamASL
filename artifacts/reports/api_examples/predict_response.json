@@ -1,0 +1,1 @@
+{"top5":[{"gloss":"HELLO","confidence":0.9195002317428589},{"gloss":"PLAY","confidence":0.0231526680290699},{"gloss":"EVENING","confidence":0.009803620167076588},{"gloss":"SAD","confidence":0.009438215754926205},{"gloss":"GO","confidence":0.004693842492997646}],"abstain":false,"threshold":0.6,"model":"pose_transformer","backend":"torch"}

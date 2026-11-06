@@ -1,0 +1,17 @@
+{
+  "argmax_agreement": 1.0,
+  "checkpoint": "artifacts/checkpoints/pose_transformer_signer_holdout.pt",
+  "checkpoint_size_bytes": 2330911,
+  "class_count": 60,
+  "dynamic_axes": {
+    "batch": true,
+    "sequence": true
+  },
+  "manifest_hash": "af1b378a9531b50d5e83ef489532ad684ee896a83248afa99c86c9941d15224b",
+  "max_abs_logit_delta": 6.198883056640625e-06,
+  "mean_abs_logit_delta": 6.319158387668722e-07,
+  "n_parity_clips": 500,
+  "onnx_path": "artifacts/onnx/pose_transformer.onnx",
+  "onnx_size_bytes": 2416116,
+  "opset": 17
+}

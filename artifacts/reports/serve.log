@@ -1,0 +1,21 @@
+INFO:     Started server process [70799]
+INFO:     Waiting for application startup.
+2026-11-05T23:57:03 | INFO     | signstream.serve.app | Inference service ready with torch backend
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8010 (Press CTRL+C to quit)
+2026-11-05T23:57:06 | INFO     | signstream.serve.app | request_id=841134551046 method=GET path=/health status=200 duration_ms=9.10
+INFO:     127.0.0.1:60958 - "GET /health HTTP/1.1" 200 OK
+2026-11-05T23:57:07 | INFO     | signstream.serve.app | request_id=d8abc94a23d9 method=GET path=/health status=200 duration_ms=0.34
+INFO:     127.0.0.1:60959 - "GET /health HTTP/1.1" 200 OK
+2026-11-05T23:57:07 | INFO     | signstream.serve.app | request_id=fc6e162072e9 method=POST path=/predict status=200 duration_ms=32.02
+INFO:     127.0.0.1:60960 - "POST /predict HTTP/1.1" 200 OK
+2026-11-05T23:57:07 | INFO     | signstream.serve.app | request_id=e8ca5d151cf9 method=POST path=/predict/batch status=200 duration_ms=63.24
+INFO:     127.0.0.1:60961 - "POST /predict/batch HTTP/1.1" 200 OK
+2026-11-05T23:57:07 | INFO     | signstream.serve.app | request_id=34d953c866f1 method=GET path=/metrics status=200 duration_ms=0.65
+INFO:     127.0.0.1:60962 - "GET /metrics HTTP/1.1" 200 OK
+2026-11-05T23:57:11 | INFO     | signstream.serve.app | request_id=665ba30122cb method=POST path=/predict status=422 duration_ms=11.44
+INFO:     127.0.0.1:60966 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [70799]

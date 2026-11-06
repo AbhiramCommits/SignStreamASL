@@ -1,0 +1,22 @@
+# HELP signstream_requests_total Total HTTP requests received.
+# TYPE signstream_requests_total counter
+signstream_requests_total 4
+# HELP signstream_predictions_total Total single-clip predictions.
+# TYPE signstream_predictions_total counter
+signstream_predictions_total 3
+# TYPE signstream_abstain_total counter
+signstream_abstain_total 0
+# TYPE signstream_latency_ms summary
+signstream_latency_ms{quantile="0.5"} 16.0790
+signstream_latency_ms{quantile="0.95"} 24.0583
+signstream_latency_ms{quantile="0.99"} 24.7676
+# TYPE signstream_batch_size histogram
+signstream_batch_size_bucket{le="1"} 1
+signstream_batch_size_bucket{le="2"} 2
+signstream_batch_size_bucket{le="4"} 2
+signstream_batch_size_bucket{le="8"} 2
+signstream_batch_size_bucket{le="16"} 2
+signstream_batch_size_bucket{le="32"} 2
+signstream_batch_size_bucket{le="+Inf"} 2
+signstream_batch_size_count 2
+signstream_abstain_rate 0.000000

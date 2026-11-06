@@ -349,6 +349,43 @@ def _cmd_regress(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_export_onnx(args: argparse.Namespace) -> int:
+    import json
+
+    from signstream.export.onnx_export import export_onnx
+
+    result = export_onnx(args.checkpoint, args.out)
+    print(json.dumps(result, indent=2, sort_keys=True))
+    return 0
+
+
+def _cmd_bench(args: argparse.Namespace) -> int:
+    import json
+
+    from signstream.bench.latency import benchmark_latency
+
+    sizes = [int(item) for item in args.batch_sizes.split(",") if item.strip()]
+    result = benchmark_latency(args.checkpoint, args.onnx, batch_sizes=sizes)
+    print(json.dumps(result["results"], indent=2, sort_keys=True))
+    return 0
+
+
+def _cmd_serve(args: argparse.Namespace) -> int:
+    import os
+
+    import uvicorn
+
+    if args.backend:
+        os.environ["SIGNSTREAM_BACKEND"] = args.backend
+    uvicorn.run(
+        "signstream.serve.app:app",
+        host=args.host,
+        port=args.port,
+        log_level=args.log_level.lower(),
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Build the complete CLI parser with all pipeline stages."""
     parser = argparse.ArgumentParser(
@@ -409,7 +446,7 @@ def build_parser() -> argparse.ArgumentParser:
         default="artifacts/checkpoints/pose_transformer_signer_holdout.pt",
     )
     export.add_argument("--out", default="artifacts/onnx/pose_transformer.onnx")
-    export.set_defaults(func=_stub("export-onnx"))
+    export.set_defaults(func=_cmd_export_onnx)
 
     bench = subparsers.add_parser("bench", help="Benchmark Torch and ONNX Runtime latency")
     bench.add_argument("--all", action="store_true")
@@ -419,7 +456,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     bench.add_argument("--onnx", default="artifacts/onnx/pose_transformer.onnx")
     bench.add_argument("--batch-sizes", default="1,8,32")
-    bench.set_defaults(func=_stub("bench"))
+    bench.set_defaults(func=_cmd_bench)
 
     regress = subparsers.add_parser("regress", help="Run the gold-set regression gate")
     regress.add_argument("--config", default="configs/thresholds.yaml")
@@ -430,7 +467,7 @@ def build_parser() -> argparse.ArgumentParser:
     serve.add_argument("--host", default="0.0.0.0")
     serve.add_argument("--port", type=int, default=8000)
     serve.add_argument("--backend", default=None, choices=["torch", "onnx"])
-    serve.set_defaults(func=_stub("serve"))
+    serve.set_defaults(func=_cmd_serve)
 
     return parser
 
